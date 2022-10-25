@@ -4,6 +4,7 @@ import android.app.Activity
 import android.os.Bundle
 import com.example.appli_watch.databinding.ActivityMainBinding
 import android.content.Intent
+import android.view.WindowManager
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 
