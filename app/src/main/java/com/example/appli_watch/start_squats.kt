@@ -17,14 +17,18 @@ class start_squats : Activity() {
         setContentView(R.layout.activity_start_squats)
 
         button_start = findViewById(R.id.button_start)
-        val monIntent : Intent =  Intent(this,squats::class.java)
+        val monIntent : Intent =  Intent(this,SquatsNew::class.java)
         countdown = object: CountDownTimer(3000,3){
             override fun onTick(p0: Long) {
                 button_start.text = "${p0/1000.toInt()+1}"
             }
 
             override fun onFinish() {
-                startActivity(monIntent)
+                try{
+                    startActivity(monIntent)
+                }catch (e: Exception){
+                    print(e)
+                }
             }
         }
 
