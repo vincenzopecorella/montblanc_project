@@ -2,18 +2,27 @@ package com.example.appli_watch.newalgo
 
 enum class StateExercise {
     INIT {
-        override fun nextState() = LOWPEAK
+        override fun nextState() = PRE_LOW
     },
-    LOWPEAK {
-        override fun nextState() = MID_START
+    PRE_LOW {
+        override fun nextState() = LOW
     },
-    MID_START {
-        override fun nextState() = MID_END
+    LOW {
+        override fun nextState() = POST_LOW
     },
-    MID_END {
-        override fun nextState() = HIGHPEAK
+    POST_LOW {
+        override fun nextState() = HALF_EXE
     },
-    HIGHPEAK {
+    HALF_EXE {
+        override fun nextState() = PRE_HIGH
+    },
+    PRE_HIGH {
+        override fun nextState() = HIGH
+    },
+    HIGH {
+        override fun nextState() = POST_HIGH
+    },
+    POST_HIGH {
         override fun nextState() = INIT
     };
     abstract fun nextState(): StateExercise

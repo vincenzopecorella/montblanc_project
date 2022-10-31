@@ -14,6 +14,8 @@ class RepetitionDetector(private val exercise: Exercise) {
     public var state: StateExercise = StateExercise.INIT
     private var exercisesConstantsRepo: ExercisesConstantsRepo = ExercisesConstantsRepo(exercise)
     private var numberOfRepetitions: Int = 0
+    public var maxAcc: Float = 0.0f
+    public var minAcc: Float = 0.0f
 
 
     public fun update(event: SensorEvent?){
@@ -52,44 +54,85 @@ class RepetitionDetector(private val exercise: Exercise) {
         for(i in 0..2){
             accVector += -(currentGravity[i] * currentAccelerometer[i]) / gravityModule
         }
+        if(maxAcc < accVector){
+            maxAcc = accVector
+        }
+        if(minAcc > accVector){
+            minAcc = accVector
+        }
         return accVector
     }
 
     private fun changeState() {
         when(state){
             StateExercise.INIT ->{
-                if(computeCurrentAccelerationVector()< exercisesConstantsRepo.getConstantsExercise().first){
+                if(computeCurrentAccelerationVector()< exercisesConstantsRepo.getConstantsExercise()[0]){
                     state = state.nextState()
+                    startTimeRepetition = currentTimeRepetition
                 }
             }
 
-            StateExercise.LOWPEAK->{
-                if(computeCurrentAccelerationVector()> exercisesConstantsRepo.getConstantsExercise().first){
-                    state = state.nextState()
-                }
-            }
-
-            StateExercise.MID_START->{
-                startTimeRepetition = currentTimeRepetition
-                state = state.nextState()
-            }
-
-            StateExercise.MID_END->{
+            StateExercise.PRE_LOW->{
                 endTimeRepetition = currentTimeRepetition
-                if(computeCurrentAccelerationVector()> exercisesConstantsRepo.getConstantsExercise().second){
-                    if((endTimeRepetition - startTimeRepetition) > exercisesConstantsRepo.getConstantsExercise().third){
-                        state = state.nextState()
-                    }
-                    else{
-                        state = StateExercise.INIT
+                if(computeCurrentAccelerationVector()< exercisesConstantsRepo.getConstantsExercise()[1]){
+                    state = if((endTimeRepetition - startTimeRepetition) > exercisesConstantsRepo.getConstantsExercise()[4]){
+                        state.nextState()
+                    } else{
+                        StateExercise.INIT
                     }
                 }
             }
 
-            StateExercise.HIGHPEAK->{
-                if(computeCurrentAccelerationVector()< exercisesConstantsRepo.getConstantsExercise().second){
+            StateExercise.LOW->{
+                if(computeCurrentAccelerationVector()> exercisesConstantsRepo.getConstantsExercise()[1]){
                     state = state.nextState()
-                    numberOfRepetitions +=1
+                    startTimeRepetition = currentTimeRepetition
+                }
+            }
+
+            StateExercise.POST_LOW->{
+                endTimeRepetition = currentTimeRepetition
+                if(computeCurrentAccelerationVector()> exercisesConstantsRepo.getConstantsExercise()[0]){
+                    state = if((endTimeRepetition - startTimeRepetition) > exercisesConstantsRepo.getConstantsExercise()[4]){
+                        state.nextState()
+                    } else{
+                        StateExercise.INIT
+                    }
+                }
+            }
+
+            StateExercise.HALF_EXE->{
+                if(computeCurrentAccelerationVector()> exercisesConstantsRepo.getConstantsExercise()[2]){
+                    state = state.nextState()
+                    startTimeRepetition = currentTimeRepetition
+                }
+            }
+
+            StateExercise.PRE_HIGH->{
+                endTimeRepetition = currentTimeRepetition
+                if(computeCurrentAccelerationVector()> exercisesConstantsRepo.getConstantsExercise()[3]){
+                    state = if((endTimeRepetition - startTimeRepetition) > exercisesConstantsRepo.getConstantsExercise()[4]){
+                        state.nextState()
+                    } else{
+                        StateExercise.INIT
+                    }
+                }
+            }
+
+            StateExercise.HIGH->{
+                if(computeCurrentAccelerationVector()< exercisesConstantsRepo.getConstantsExercise()[3]){
+                    state = state.nextState()
+                    startTimeRepetition = currentTimeRepetition
+                }
+            }
+
+            StateExercise.POST_HIGH->{
+                endTimeRepetition = currentTimeRepetition
+                if(computeCurrentAccelerationVector()< exercisesConstantsRepo.getConstantsExercise()[2]){
+                    if((endTimeRepetition - startTimeRepetition) > exercisesConstantsRepo.getConstantsExercise()[4]) {
+                        numberOfRepetitions += 1
+                    }
+                    state = state.nextState()
                 }
             }
         }

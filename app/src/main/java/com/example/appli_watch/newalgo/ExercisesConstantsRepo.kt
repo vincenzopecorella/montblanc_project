@@ -2,14 +2,16 @@ package com.example.appli_watch.newalgo
 
 class ExercisesConstantsRepo(private val exercise: Exercise) {
     // Put here all the constants for peak tracking of different exercises
-    private val squatMin: Float = -2.0f
-    private val squatMax: Float = 2.0f
-    private val squatRepetitionTime: Float = 1000000000.0f
+    private val squatMidMin: Float = -1.0f
+    private val squatMin: Float = -5.0f
+    private val squatMidMax: Float = 1.0f
+    private val squatMax: Float = 4.0f
+    private val squatRepetitionTime: Float = 30000000.0f
 
-    public fun getConstantsExercise(): Triple<Float, Float, Float> {
+    public fun getConstantsExercise(): FloatArray {
         if(exercise == Exercise.SQUAT){
-            return Triple(squatMin, squatMax, squatRepetitionTime)
+            return floatArrayOf(squatMidMin, squatMin, squatMidMax, squatMax, squatRepetitionTime)
         }
-        return Triple(0.0f, 0.0f, 0.0f)
+        return floatArrayOf(0f, 0f, 0f, 0f, 0f)
     }
 }
