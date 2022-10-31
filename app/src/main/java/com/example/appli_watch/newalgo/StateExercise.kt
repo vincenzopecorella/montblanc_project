@@ -5,6 +5,12 @@ enum class StateExercise {
         override fun nextState() = LOWPEAK
     },
     LOWPEAK {
+        override fun nextState() = MID_START
+    },
+    MID_START {
+        override fun nextState() = MID_END
+    },
+    MID_END {
         override fun nextState() = HIGHPEAK
     },
     HIGHPEAK {

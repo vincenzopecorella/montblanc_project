@@ -46,11 +46,11 @@ class RepetitionDetector(private val exercise: Exercise) {
         }
     }
 
-    private fun computeCurrentAccelerationVector(): Float{
+    public fun computeCurrentAccelerationVector(): Float{
         val gravityModule = sqrt(currentGravity[0].pow(2)+currentGravity[1].pow(2)+currentGravity[2].pow(2))
         var accVector: Float = 0.0f
         for(i in 0..2){
-            accVector += (currentGravity[i] * currentAccelerometer[i]) / gravityModule
+            accVector += -(currentGravity[i] * currentAccelerometer[i]) / gravityModule
         }
         return accVector
     }
@@ -58,26 +58,38 @@ class RepetitionDetector(private val exercise: Exercise) {
     private fun changeState() {
         when(state){
             StateExercise.INIT ->{
-                startTimeRepetition = currentTimeRepetition
                 if(computeCurrentAccelerationVector()< exercisesConstantsRepo.getConstantsExercise().first){
                     state = state.nextState()
                 }
             }
 
             StateExercise.LOWPEAK->{
-                if(computeCurrentAccelerationVector()> exercisesConstantsRepo.getConstantsExercise().second){
+                if(computeCurrentAccelerationVector()> exercisesConstantsRepo.getConstantsExercise().first){
                     state = state.nextState()
                 }
             }
 
-            StateExercise.HIGHPEAK->{
+            StateExercise.MID_START->{
+                startTimeRepetition = currentTimeRepetition
+                state = state.nextState()
+            }
+
+            StateExercise.MID_END->{
                 endTimeRepetition = currentTimeRepetition
                 if(computeCurrentAccelerationVector()> exercisesConstantsRepo.getConstantsExercise().second){
-                    state = state.nextState()
-                    if(endTimeRepetition - startTimeRepetition > exercisesConstantsRepo.getConstantsExercise().third){
-                        numberOfRepetitions +=1
+                    if((endTimeRepetition - startTimeRepetition) > exercisesConstantsRepo.getConstantsExercise().third){
+                        state = state.nextState()
                     }
+                    else{
+                        state = StateExercise.INIT
+                    }
+                }
+            }
 
+            StateExercise.HIGHPEAK->{
+                if(computeCurrentAccelerationVector()< exercisesConstantsRepo.getConstantsExercise().second){
+                    state = state.nextState()
+                    numberOfRepetitions +=1
                 }
             }
         }
