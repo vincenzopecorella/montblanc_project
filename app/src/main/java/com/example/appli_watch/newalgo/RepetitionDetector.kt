@@ -10,7 +10,7 @@ class RepetitionDetector(private val exercise: Exercise) {
     private var endTimeRepetition: Float = 0.0f
     private var currentTimeRepetition: Float = 0.0f
     private var currentAccelerometer: FloatArray = FloatArray(3){0.0f}
-    private var currentGravity: FloatArray = FloatArray(3){0.0f}
+    public var currentGravity: FloatArray = FloatArray(3){0.0f}
     public var state: StateExercise = StateExercise.INIT
     private var exercisesConstantsRepo: ExercisesConstantsRepo = ExercisesConstantsRepo(exercise)
     private var numberOfRepetitions: Int = 0
@@ -37,14 +37,14 @@ class RepetitionDetector(private val exercise: Exercise) {
             currentTimeRepetition = event.timestamp.toFloat()
             currentAccelerometer[0] = event.values[0]
             currentAccelerometer[1] = event.values[1]
-            currentAccelerometer[1] = event.values[2]
+            currentAccelerometer[2] = event.values[2]
         }
     }
     private fun updateGravity(event: SensorEvent?){
         if (event != null) {
             currentGravity[0] = event.values[0]
             currentGravity[1] = event.values[1]
-            currentGravity[1] = event.values[2]
+            currentGravity[2] = event.values[2]
         }
     }
 
