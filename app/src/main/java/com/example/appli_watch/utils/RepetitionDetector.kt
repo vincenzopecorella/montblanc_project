@@ -26,7 +26,7 @@ class RepetitionDetector(private val exercise: Exercise) {
         if(event?.sensor?.type == Sensor.TYPE_GRAVITY){
             updateGravity(event)
         }
-        changeState()
+        patternReco()
     }
 
     public fun getNumberOfRepetitions(): Int{
@@ -64,78 +64,66 @@ class RepetitionDetector(private val exercise: Exercise) {
         return accVector
     }
 
-    private fun changeState() {
-        when(state){
-            StateExercise.INIT ->{
-                if(computeCurrentAccelerationVector()< exercisesConstantsRepo.getConstantsExercise()[0]){
-                    state = state.nextState()
-                    startTimeRepetition = currentTimeRepetition
-                }
-            }
+    private fun patternReco() {
+        //FILO buffers
+        var accelData = mutableListOf(0.0)
+        var integralData = mutableListOf(0.0)
+        //working variables
+        var nbSquats = 0
+        var waiting = false
+        var waitCountdown = 0
+        val index = 0
+        //specific data to load
+        val allConsts: MutableList<Any> = exercisesConstantsRepo.getConstantsExercise()
+        val corrDataSample = allConsts[0]
+        val inBetweenSquatsWaitTime = allConsts[1]
+        val TRESHOLD_CORREl_SQUAT = allConsts[2]
+        val PEAK_WIDTH = allConsts[3]
+        val G_CONST = allConsts[4]
 
-            StateExercise.PRE_LOW->{
-                endTimeRepetition = currentTimeRepetition
-                if(computeCurrentAccelerationVector()< exercisesConstantsRepo.getConstantsExercise()[1]){
-                    state = if((endTimeRepetition - startTimeRepetition) > exercisesConstantsRepo.getConstantsExercise()[4]){
-                        state.nextState()
-                    } else{
-                        StateExercise.INIT
-                    }
-                }
-            }
+        accelData.add(computeCurrentAccelerationVector().toDouble()/G_CONST)
 
-            StateExercise.LOW->{
-                if(computeCurrentAccelerationVector()> exercisesConstantsRepo.getConstantsExercise()[1]){
-                    state = state.nextState()
-                    startTimeRepetition = currentTimeRepetition
-                }
-            }
+        //idea to improve a little: if detects an acceleration vector projected on (x,y) plane larger than a given treshold value, do not count the squat (would be a movement away from z axis != squat movement)
 
-            StateExercise.POST_LOW->{
-                endTimeRepetition = currentTimeRepetition
-                if(computeCurrentAccelerationVector()> exercisesConstantsRepo.getConstantsExercise()[0]){
-                    state = if((endTimeRepetition - startTimeRepetition) > exercisesConstantsRepo.getConstantsExercise()[4]){
-                        state.nextState()
-                    } else{
-                        StateExercise.INIT
-                    }
-                }
-            }
 
-            StateExercise.HALF_EXE->{
-                if(computeCurrentAccelerationVector()> exercisesConstantsRepo.getConstantsExercise()[2]){
-                    state = state.nextState()
-                    startTimeRepetition = currentTimeRepetition
-                }
-            }
+        if (accelData.size >= PEAK_WIDTH + 2) { //wait to be filled enough to make a correlation with the sample
 
-            StateExercise.PRE_HIGH->{
-                endTimeRepetition = currentTimeRepetition
-                if(computeCurrentAccelerationVector()> exercisesConstantsRepo.getConstantsExercise()[3]){
-                    state = if((endTimeRepetition - startTimeRepetition) > exercisesConstantsRepo.getConstantsExercise()[4]){
-                        state.nextState()
-                    } else{
-                        StateExercise.INIT
-                    }
-                }
-            }
+            integralData.add(integrate_on_range(accelData,PEAK_WIDTH,index))
 
-            StateExercise.HIGH->{
-                if(computeCurrentAccelerationVector()< exercisesConstantsRepo.getConstantsExercise()[3]){
-                    state = state.nextState()
-                    startTimeRepetition = currentTimeRepetition
-                }
-            }
+            if (integralData.size >= corrDataSample.size + 2) {
+                if ((!waiting) && (xcorr(integralData,corrDataSample,index) > TRESHOLD_CORREl_SQUAT)) {
+                    numberOfRepetitions += 1
+                    waiting = true
+                    waitCountdown = inBetweenSquatsWaitTime
 
-            StateExercise.POST_HIGH->{
-                endTimeRepetition = currentTimeRepetition
-                if(computeCurrentAccelerationVector()< exercisesConstantsRepo.getConstantsExercise()[2]){
-                    if((endTimeRepetition - startTimeRepetition) > exercisesConstantsRepo.getConstantsExercise()[4]) {
-                        numberOfRepetitions += 1
-                    }
-                    state = state.nextState()
+                    //save1 = integrate_on_range(accelData,PEAK_WIDTH,index)
+                    //save2 = xcorr(integralData,corrDataSample,index)
                 }
+                if (waiting) {
+                    //square.text = "Squats :\n ${numberOfRepetitions}"//"Squats :\n ${nbSquats}, ${save1}, ${save2}"
+
+                    waitCountdown -= 1
+                    if (waitCountdown <= 0) waiting = false
+                }
+                integralData.removeAt(0)
             }
+            accelData.removeAt(0) //remove oldest data element
         }
     }
+}
+
+fun integrate_on_range(data: MutableList<Double>, range: Int, index: Int): Double { //integrates data from index to index + range
+    var integral_sum = 0.0
+    for (i in index until range + index - 1) {
+        integral_sum += data[i]
+    }
+    return integral_sum
+}
+
+fun xcorr(base: MutableList<Double>, sample: Array<Double>, index: Int): Double {   //applies correlation analysis on base with sample starting at base[index]
+    var correlSum = 0.0
+    for (i in sample.indices) {
+        correlSum += sample[i] * base[i+index]
+    }
+    return correlSum
 }
