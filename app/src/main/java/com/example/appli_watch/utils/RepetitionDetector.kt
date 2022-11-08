@@ -2,17 +2,22 @@ package com.example.appli_watch.utils
 
 import android.hardware.Sensor
 import android.hardware.SensorEvent
-import com.example.appli_watch.state_algo.StateExercise
 import kotlin.math.pow
 import kotlin.math.sqrt
 
 class RepetitionDetector(private val exercise: Exercise) {
-    private var startTimeRepetition: Float = 0.0f
-    private var endTimeRepetition: Float = 0.0f
+    //FILO buffers
+    var accelData = mutableListOf(0.0)
+    var integralData = mutableListOf(0.0)
+    var corr: Double = 0.0
+    //working variables
+    var nbSquats = 0
+    var waiting = false
+    var waitCountdown = 0
+    val index = 0
     private var currentTimeRepetition: Float = 0.0f
     private var currentAccelerometer: FloatArray = FloatArray(3){0.0f}
     public var currentGravity: FloatArray = FloatArray(3){0.0f}
-    public var state: StateExercise = StateExercise.INIT
     private var exercisesConstantsRepo: ExercisesConstantsRepo = ExercisesConstantsRepo(exercise)
     private var numberOfRepetitions: Int = 0
     public var maxAcc: Float = 0.0f
@@ -65,21 +70,13 @@ class RepetitionDetector(private val exercise: Exercise) {
     }
 
     private fun patternReco() {
-        //FILO buffers
-        var accelData = mutableListOf(0.0)
-        var integralData = mutableListOf(0.0)
-        //working variables
-        var nbSquats = 0
-        var waiting = false
-        var waitCountdown = 0
-        val index = 0
         //specific data to load
         val allConsts: MutableList<Any> = exercisesConstantsRepo.getConstantsExercise()
-        val corrDataSample = allConsts[0]
-        val inBetweenSquatsWaitTime = allConsts[1]
-        val TRESHOLD_CORREl_SQUAT = allConsts[2]
-        val PEAK_WIDTH = allConsts[3]
-        val G_CONST = allConsts[4]
+        val corrDataSample: Array<Double> = allConsts[0] as Array<Double>
+        val inBetweenSquatsWaitTime: Int = allConsts[1] as Int
+        val TRESHOLD_CORREl_SQUAT: Double = allConsts[2] as Double
+        val PEAK_WIDTH: Int = allConsts[3] as Int
+        val G_CONST: Double = allConsts[4] as Double
 
         accelData.add(computeCurrentAccelerationVector().toDouble()/G_CONST)
 
@@ -91,6 +88,8 @@ class RepetitionDetector(private val exercise: Exercise) {
             integralData.add(integrate_on_range(accelData,PEAK_WIDTH,index))
 
             if (integralData.size >= corrDataSample.size + 2) {
+
+                corr = xcorr(integralData,corrDataSample,index)
                 if ((!waiting) && (xcorr(integralData,corrDataSample,index) > TRESHOLD_CORREl_SQUAT)) {
                     numberOfRepetitions += 1
                     waiting = true

@@ -43,12 +43,12 @@ class Squats : Activity(), SensorEventListener, View.OnClickListener {
     private fun setUpSensorStuff(){
         sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
         sensorManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION)?.also{
-            sensorManager.registerListener(this, it,SensorManager.SENSOR_DELAY_FASTEST, SensorManager.SENSOR_DELAY_FASTEST)
+            sensorManager.registerListener(this, it,SensorManager.SENSOR_DELAY_GAME, SensorManager.SENSOR_DELAY_FASTEST)
         }
 
         sensorManager2 = getSystemService(SENSOR_SERVICE) as SensorManager
         sensorManager2.getDefaultSensor(Sensor.TYPE_GRAVITY)?.also{
-            sensorManager2.registerListener(this, it,SensorManager.SENSOR_DELAY_FASTEST, SensorManager.SENSOR_DELAY_FASTEST)
+            sensorManager2.registerListener(this, it,SensorManager.SENSOR_DELAY_GAME, SensorManager.SENSOR_DELAY_FASTEST)
         }
 
         sensorManager3 = getSystemService(SENSOR_SERVICE) as SensorManager
@@ -62,7 +62,7 @@ class Squats : Activity(), SensorEventListener, View.OnClickListener {
             return
         }
         repetitionTracker.update(event)
-        square.text = "Squats :\n ${repetitionTracker.getNumberOfRepetitions()}, ${repetitionTracker.currentGravity[0]}, ${repetitionTracker.currentGravity[1]}, ${repetitionTracker.currentGravity[2]}"
+        square.text = "Squats :\n ${repetitionTracker.getNumberOfRepetitions()}, ${repetitionTracker.corr}"
 
     }
 
