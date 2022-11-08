@@ -1,6 +1,8 @@
-package com.example.appli_watch.newalgo
+package com.example.appli_watch.state_algo
 
-class ExercisesConstantsRepo(private val exercise: Exercise) {
+import com.example.appli_watch.utils.Exercise
+
+class StateExercisesConstantsRepo(private val exercise: Exercise) {
     // Put here all the constants for peak tracking of different exercises
     private val squatMidMin: Float = -1.0f
     private val squatMin: Float = -5.0f

@@ -1,4 +1,4 @@
-package com.example.appli_watch.newalgo
+package com.example.appli_watch.state_algo
 
 enum class StateExercise {
     INIT {

@@ -12,15 +12,7 @@
         android:supportsRtl="true"
         android:theme="@android:style/Theme.DeviceDefault">
         <activity
-            android:name=".SquatsNew"
-            android:exported="false"
-            android:theme="@android:style/Theme.DeviceDefault.NoActionBar">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".squats"
+            android:name=".Squats"
             android:exported="false"
             android:theme="@android:style/Theme.DeviceDefault.NoActionBar">
             <meta-data

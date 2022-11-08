@@ -12,14 +12,15 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
-import com.example.appli_watch.newalgo.Exercise
-import com.example.appli_watch.newalgo.RepetitionDetector
+import com.example.appli_watch.utils.Exercise
+import com.example.appli_watch.utils.RepetitionDetector
 
 
-class SquatsNew : Activity(), SensorEventListener, View.OnClickListener {
+class Squats : Activity(), SensorEventListener, View.OnClickListener {
     private lateinit var button_pause: Button
     private lateinit var sensorManager: SensorManager
     private lateinit var sensorManager2: SensorManager
+    private lateinit var sensorManager3: SensorManager
     private lateinit var square: TextView
     private lateinit var square2: TextView
     private var pause: Boolean = false
@@ -49,6 +50,11 @@ class SquatsNew : Activity(), SensorEventListener, View.OnClickListener {
         sensorManager2.getDefaultSensor(Sensor.TYPE_GRAVITY)?.also{
             sensorManager2.registerListener(this, it,SensorManager.SENSOR_DELAY_FASTEST, SensorManager.SENSOR_DELAY_FASTEST)
         }
+
+        sensorManager3 = getSystemService(SENSOR_SERVICE) as SensorManager
+        sensorManager3.getDefaultSensor(Sensor.TYPE_GYROSCOPE)?.also{
+            sensorManager3.registerListener(this, it,SensorManager.SENSOR_DELAY_FASTEST, SensorManager.SENSOR_DELAY_FASTEST)
+        }
     }
 
     override fun onSensorChanged(event: SensorEvent?) {
@@ -75,14 +81,14 @@ class SquatsNew : Activity(), SensorEventListener, View.OnClickListener {
             square2.visibility = View.INVISIBLE
             button_pause.text = "Pause"
             pause = false
-            Toast.makeText(this@SquatsNew, "Play", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@Squats, "Play", Toast.LENGTH_SHORT).show()
         } else {
             square.visibility = View.INVISIBLE
             square2.visibility = View.VISIBLE
             button_pause.text = "Play"
             square2.text = "Squats :\n ${repetitionTracker.getNumberOfRepetitions()}"
             pause = true
-            Toast.makeText(this@SquatsNew, "Pause", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@Squats, "Pause", Toast.LENGTH_SHORT).show()
         }
     }
 }

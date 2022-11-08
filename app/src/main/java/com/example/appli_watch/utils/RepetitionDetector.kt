@@ -1,7 +1,8 @@
-package com.example.appli_watch.newalgo
+package com.example.appli_watch.utils
 
 import android.hardware.Sensor
 import android.hardware.SensorEvent
+import com.example.appli_watch.state_algo.StateExercise
 import kotlin.math.pow
 import kotlin.math.sqrt
 
