@@ -55,7 +55,6 @@ class SquatsNew : Activity(), SensorEventListener, View.OnClickListener {
         if (pause){
             return
         }
-        val text = 1.0
         repetitionTracker.update(event)
         square.text = "Squats :\n ${repetitionTracker.getNumberOfRepetitions()}, ${repetitionTracker.currentGravity[0]}, ${repetitionTracker.currentGravity[1]}, ${repetitionTracker.currentGravity[2]}"
 
