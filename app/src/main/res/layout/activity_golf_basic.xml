@@ -20,7 +20,7 @@
             android:id="@+id/trainingTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Squats"
+            android:text="Basic Golf Training"
             android:textAlignment="center"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -34,7 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLines="10"
-            android:text="Number of Repetitions:"
+            android:text="Next Exercise:"
             android:textAlignment="center"
             android:textSize="14sp"
             android:textStyle="bold" />
@@ -44,7 +44,7 @@
             android:layout_height="10dp" />
 
         <TextView
-            android:id="@+id/counter"
+            android:id="@+id/nextExercise"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLines="10"
@@ -52,19 +52,23 @@
             android:textAlignment="center"
             android:textSize="14sp" />
 
+        <TextView
+            android:id="@+id/metric"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="10"
+            android:text="Void"
+            android:textAlignment="center"
+            android:textSize="14sp" />
 
     </LinearLayout>
     <Button
-        android:id="@+id/button_pause"
+        android:id="@+id/startTraining"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_alignParentBottom="true"
-        android:text="Pause"
+        android:text="Start"
         android:textSize="10sp" />
 
 </RelativeLayout>
-
-
-
-

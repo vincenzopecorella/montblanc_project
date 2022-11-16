@@ -6,4 +6,27 @@
     -->
     <string name="hello_world">Hello Square World!</string>
     <string name="c_est_parti">C\'est parti !!</string>
+    <string name="golfDescription">
+        - Bird dog - 30 sec \n
+        - Break - 15 sec \n
+        - Bird dog - 30 sec \n
+        - Break - 15 sec \n
+        - Bird dog - 30 sec \n
+        - Break - 15 sec \n
+        - Bird dog - 30 sec \n
+        - Break - 15 sec \n
+        - Jumping jacks - 45 sec \n
+        - Break - 10 sec \n
+        - Jumping jacks - 45 sec \n
+        - Break - 10 sec \n
+        - Jumping jacks - 45 sec \n
+        - Break - 10 sec \n
+        - Jumping jacks - 45 sec \n
+        - Break - 10 sec \n
+        - Jumping jacks - 45 sec \n
+        - Break - 10 sec \n
+        break 30” x 4 \n
+        3) Push-up (with knees on the floor) 5 x 5 \n
+        4) Russian twist 10 x 4 (30” break) \n
+    </string>
 </resources>
