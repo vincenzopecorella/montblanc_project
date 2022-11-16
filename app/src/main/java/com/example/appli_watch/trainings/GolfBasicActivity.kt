@@ -49,22 +49,22 @@ class GolfBasicActivity : AppCompatActivity() {
         when(exercisesCount){
             0 -> {
                 nextExerciseName.text = "Bird Dogs"
-                nextExerciseMetric.text = "30 seconds"
+                nextExerciseMetric.text = "5 seconds"
                 nextIntent =  Intent(this,TimeTrackedActivity::class.java)
-                nextIntent.putExtra("time", 30)
+                nextIntent.putExtra("time", 5)
                 nextIntent.putExtra("exerciseName", "Bird Dogs")
             }
             1 -> {
                 nextExerciseName.text = "Rest"
-                nextExerciseMetric.text = "10 seconds"
+                nextExerciseMetric.text = "5 seconds"
                 nextIntent = Intent(this,BreakActivity::class.java)
-                nextIntent.putExtra("time", 10)
+                nextIntent.putExtra("time", 5)
             }
             2 -> {
                 nextExerciseName.text = "Squats"
                 nextExerciseMetric.text = "10 repetitions"
                 nextIntent =  Intent(this,Squats::class.java)
-                nextIntent.putExtra("maxRepetitions", 0)
+                nextIntent.putExtra("maxRepetitions", 2)
             }
             3 -> {
                 nextExerciseName.text = "Rest"

@@ -52,5 +52,13 @@
             android:textAlignment="center"
             android:textSize="14sp" />
     </LinearLayout>
+    <Button
+        android:id="@+id/button_pause"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_alignParentBottom="true"
+        android:text="Pause"
+        android:textSize="10sp" />
 
 </RelativeLayout>
