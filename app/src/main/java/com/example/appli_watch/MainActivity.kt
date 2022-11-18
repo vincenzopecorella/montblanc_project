@@ -19,7 +19,7 @@ class MainActivity : Activity() {
 
         buttonS = findViewById(R.id.button_squats)
 
-        val monIntent : Intent =  Intent( this, GolfBasicActivity::class.java)
+        val monIntent : Intent =  Intent( this, Main_Menu::class.java)
         buttonS.setOnClickListener {
             try{
                 startActivity(monIntent)
