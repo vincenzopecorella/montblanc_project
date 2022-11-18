@@ -16,23 +16,14 @@
             android:layout_width="match_parent"
             android:layout_height="42dp" />
 
-        <TextView
-            android:id="@+id/trainingTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Basic Golf Training"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
         <Space
             android:layout_width="match_parent"
-            android:layout_height="27dp" />
+            android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/descriptionExercise"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:maxLines="10"
             android:text="Next Exercise:"
             android:textAlignment="center"
@@ -69,7 +60,7 @@
         android:layout_alignParentBottom="true"
         android:layout_gravity="center"
         android:layout_marginBottom="-7dp"
-        android:text="Pause"
+        android:text="Start"
         android:textSize="10sp" />
 
 </RelativeLayout>

@@ -58,7 +58,7 @@ class ExercisesConstantsRepo(private val exercise: Exercise) {
         return mutableListOf(0f, 0f, 0f, 0f, 0f)
         */
         if(exercise == Exercise.SQUAT){
-            return mutableListOf(JJ_sampleIntegAll, inBetweenJacksWaitTime, TRESHOLD_CORREl_JACKS, JJ_RangeDim, JJ_dimension, JJ_IntegIndexDim, JJ_indexCorrAll, JJ_RangeDim.max(), JJ_GREATEST_SAMPLE_SIZE)
+            return mutableListOf(sampleIntegAll, inBetweenSquatsWaitTime, TRESHOLD_CORREl_SQUAT, RangeDim, dimension, IntegIndexDim, indexCorrAll, RangeDim.max(), GREATEST_SAMPLE_SIZE)
         }
         return mutableListOf(0f, 0f, 0f, 0f, 0f)
     }

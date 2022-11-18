@@ -80,14 +80,12 @@ class Squats() : Activity(), SensorEventListener, View.OnClickListener {
     }
 
     override fun onClick(view: View?) {
-        if(pause){
+        if (pause) {
             button_pause.text = "Pause"
             pause = false
-            Toast.makeText(this@Squats, "Play", Toast.LENGTH_SHORT).show()
         } else {
             button_pause.text = "Play"
             pause = true
-            Toast.makeText(this@Squats, "Pause", Toast.LENGTH_SHORT).show()
         }
     }
 }
