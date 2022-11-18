@@ -65,10 +65,11 @@
     <Button
         android:id="@+id/startTraining"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_height="60dp"
         android:layout_alignParentBottom="true"
-        android:text="Start"
+        android:layout_gravity="center"
+        android:layout_marginBottom="-7dp"
+        android:text="Pause"
         android:textSize="10sp" />
 
 </RelativeLayout>
