@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.activity.result.contract.ActivityResultContracts
 import com.example.appli_watch.R
+import com.example.appli_watch.exercises.BirdDog
 import com.example.appli_watch.exercises.BreakActivity
 import com.example.appli_watch.exercises.Squats
 import com.example.appli_watch.exercises.TimeTrackedActivity
@@ -49,10 +50,9 @@ class GolfBasicActivity : AppCompatActivity() {
         when(exercisesCount){
             0 -> {
                 nextExerciseName.text = "Bird Dogs"
-                nextExerciseMetric.text = "5 seconds"
-                nextIntent =  Intent(this,TimeTrackedActivity::class.java)
-                nextIntent.putExtra("time", 5)
-                nextIntent.putExtra("exerciseName", "Bird Dogs")
+                nextExerciseMetric.text = "5 repetitions"
+                nextIntent =  Intent(this,BirdDog::class.java)
+                nextIntent.putExtra("maxRepetitions", 5)
             }
             1 -> {
                 nextExerciseName.text = "Rest"
