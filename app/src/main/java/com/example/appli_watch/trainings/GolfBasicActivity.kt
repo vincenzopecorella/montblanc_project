@@ -67,7 +67,7 @@ class GolfBasicActivity : AppCompatActivity() {
                 nextExerciseName.text = "Squats"
                 nextExerciseMetric.text = "10 repetitions"
                 nextIntent =  Intent(this,Squats::class.java)
-                nextIntent.putExtra("maxRepetitions", 2)
+                nextIntent.putExtra("maxRepetitions", 20)
             }
             3 -> {
                 nextExerciseName.text = "Rest"
