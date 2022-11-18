@@ -61,7 +61,7 @@ class BirdDog() : Activity(), SensorEventListener, View.OnClickListener {
             return
         }
         repetitionTracker.update(event)
-        counter.text = "${repetitionTracker.getNumberOfRepetitions()}"
+        counter.text = "${repetitionTracker.getNumberOfRepetitions()}"+ "         " + "${repetitionTracker.corr }"
         if(repetitionTracker.getNumberOfRepetitions() >= maxRepetitions ){
             val intent = Intent()
             setResult(RESULT_OK, intent)

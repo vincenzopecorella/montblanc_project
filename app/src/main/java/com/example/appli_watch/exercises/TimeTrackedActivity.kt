@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
@@ -28,6 +29,7 @@ class TimeTrackedActivity : AppCompatActivity(), View.OnClickListener {
         val intent = intent
         initialTime = intent.getIntExtra("time", 0).toLong()
         exerciseName = intent.getStringExtra("exerciseName").toString()
+        window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
 
 
         rest = findViewById(R.id.timeLeft)

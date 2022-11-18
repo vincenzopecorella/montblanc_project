@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.view.WindowManager
 import android.widget.TextView
 import com.example.appli_watch.R
 
@@ -19,6 +20,7 @@ class BreakActivity : AppCompatActivity() {
 
         val intent = intent
         time = intent.getIntExtra("time", 0).toLong()
+        window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
 
         rest = findViewById(R.id.timeLeft)
         countdown = object: CountDownTimer(time*1000,3){

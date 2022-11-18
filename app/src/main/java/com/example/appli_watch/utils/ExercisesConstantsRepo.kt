@@ -30,7 +30,7 @@ class ExercisesConstantsRepo(private val exercise: Exercise) {
     val GREATEST_SAMPLE_SIZE2 = intDataSample2.size
 
     val inBetweenBirdDogWaitTime = 100
-    val TRESHOLD_CORREl_BirdDog = 56966.0
+    val TRESHOLD_CORREl_BirdDog = 30000.0
 
     val PEAK_WIDTH2 = 433 - 391
 
