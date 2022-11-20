@@ -11,34 +11,38 @@ import android.view.View
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 import com.example.appli_watch.R
 import com.example.appli_watch.utils.Exercise
 import com.example.appli_watch.utils.RepetitionDetector
 
 
-class BirdDog() : Activity(), SensorEventListener, View.OnClickListener {
+class DeadBug() : Activity(), SensorEventListener, View.OnClickListener {
     private lateinit var button_pause: Button
     private lateinit var sensorManager: SensorManager
     private lateinit var sensorManager2: SensorManager
     private lateinit var sensorManager3: SensorManager
     private lateinit var counter: TextView
     private var pause: Boolean = false
-    private val repetitionTracker: RepetitionDetector = RepetitionDetector(Exercise.BIRDDOG)
+    private val repetitionTracker: RepetitionDetector = RepetitionDetector(Exercise.DEAD_BUG)
     private var maxRepetitions: Int = 0
+    private lateinit var exercise: TextView
+    private lateinit var exercise_name: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(com.example.appli_watch.R.layout.activity_squats)
+        setContentView(com.example.appli_watch.R.layout.activity_all_exercises)
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
 
         val intent = intent
         maxRepetitions = intent.getIntExtra("maxRepetitions", 0)
+        exercise_name = intent.getStringExtra("ExercisesName").toString()
 
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         counter = findViewById(R.id.counter)
+        exercise = findViewById(R.id.trainingTitle)
+        exercise.text = exercise_name
         setUpSensorStuff()
         button_pause = findViewById(R.id.button_pause)
         button_pause.setOnClickListener(this)

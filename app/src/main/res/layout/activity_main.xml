@@ -9,44 +9,94 @@
     tools:deviceIds="wear">
 
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:textAlignment="center">
+        android:orientation="vertical">
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="20dp" />
+            android:layout_height="12dp" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
+            android:layout_height="38dp"
             android:gravity="center"
-            android:text="Activity ?" />
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="20dp" />
-        <Button
-            android:id="@+id/button_squats"
-            android:layout_width="75dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textSize="10dp"
-            android:text="Golf Training" />
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
-        <Button
-            android:id="@+id/button_"
-            android:layout_width="75dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textSize="10dp"
-            android:text="..." />
+            android:text="GYMHIIT"
+            android:textSize="20dp" />
 
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="110dp"
+            android:fillViewport="true"
+            android:scrollbars="none">
 
+            <androidx.gridlayout.widget.GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="-0dp"
+                android:gravity="center">
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+                    android:id="@+id/training"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="46dp"
+                    android:layout_marginEnd="20dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    android:text="TRAIN"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:backgroundTint="#FB5223"
+                    app:cornerRadius="100dp"
+                    app:icon="@drawable/stretching"
+                    app:iconGravity="textTop"
+                    app:iconSize="40dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+                    android:id="@+id/concierge"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginEnd="20dp"
+                    android:scaleType="centerInside"
+                    android:text="ASK"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:backgroundTint="#72B83D"
+                    app:cornerRadius="100dp"
+                    app:icon="@drawable/bell"
+                    app:iconGravity="textTop"
+                    app:iconSize="40dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+                    android:id="@+id/profile"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginEnd="46dp"
+                    android:scaleType="centerInside"
+                    android:text="YOU"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:backgroundTint="#258EA6"
+                    app:cornerRadius="100dp"
+                    app:icon="@drawable/user"
+                    app:iconGravity="textTop"
+                    app:iconSize="40dp" />
+            </androidx.gridlayout.widget.GridLayout>
+        </HorizontalScrollView>
+
+        <TextView
+            android:id="@+id/HH"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="VOID"
+            android:textSize="15dp" />
     </LinearLayout>
+
+
 </androidx.wear.widget.BoxInsetLayout>

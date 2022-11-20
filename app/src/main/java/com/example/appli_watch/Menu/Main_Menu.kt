@@ -1,12 +1,12 @@
-package com.example.appli_watch
+package com.example.appli_watch.Menu
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
-import com.example.appli_watch.Menu.Menu_warmup
-import com.example.appli_watch.Menu.Menu_workout
+import com.example.appli_watch.R
+import com.example.appli_watch.start_squats
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -31,7 +31,7 @@ class Main_Menu : AppCompatActivity() {
         time.text = currentTime
 
         val Intent_exercise : Intent =  Intent(/* packageContext = */ this,/* cls = */
-            start_squats::class.java)
+            Menu_exercises::class.java)
         button_exercise.setOnClickListener {
             startActivity(Intent_exercise)
         }

@@ -20,7 +20,15 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".exercises.BirdDog"
+            android:name=".exercises.DeadBug"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".exercises.JumpingJacks"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <meta-data
@@ -44,8 +52,8 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Main_Menu"
-            android:exported="false"
+            android:name=".Menu.Main_Menu"
+            android:exported="true"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <meta-data
                 android:name="android.app.lib_name"

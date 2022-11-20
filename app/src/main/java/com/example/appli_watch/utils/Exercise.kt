@@ -2,5 +2,6 @@ package com.example.appli_watch.utils
 
 enum class Exercise {
     SQUAT,
-    BIRDDOG
+    DEAD_BUG,
+    JUMPING_JACK
 }
