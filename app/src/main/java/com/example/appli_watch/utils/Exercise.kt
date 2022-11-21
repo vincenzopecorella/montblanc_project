@@ -4,5 +4,6 @@ enum class Exercise {
     SQUAT,
     DEAD_BUG,
     JUMPING_JACK,
-    BIRD_DOG
+    BIRD_DOG,
+    LUNGES
 }
