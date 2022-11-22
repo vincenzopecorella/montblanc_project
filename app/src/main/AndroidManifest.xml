@@ -12,6 +12,14 @@
         android:supportsRtl="true"
         android:theme="@android:style/Theme.DeviceDefault">
         <activity
+            android:name=".Menu.RepSelector"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".Menu.Menu_workout"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.NoActionBar">

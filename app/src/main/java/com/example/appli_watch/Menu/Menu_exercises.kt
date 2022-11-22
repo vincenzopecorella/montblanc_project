@@ -33,23 +33,20 @@ class Menu_exercises : AppCompatActivity() {
         time.text = currentTime
 
         val Intent_jumpingjacks : Intent =  Intent(/* packageContext = */ this,/* cls = */
-            JumpingJacks::class.java)
-        Intent_jumpingjacks.putExtra("maxRepetitions", 20)
+            RepSelector::class.java)
         Intent_jumpingjacks.putExtra("ExercisesName", "Jumping Jacks")
         button_jumpingjacks.setOnClickListener {
             startActivity(Intent_jumpingjacks)
         }
         val Intent_squats : Intent =  Intent(/* packageContext = */ this,/* cls = */
-            Squats::class.java)
-        Intent_squats.putExtra("maxRepetitions", 20)
+            RepSelector::class.java)
         Intent_squats.putExtra("ExercisesName", "Squats")
         button_squats.setOnClickListener {
             startActivity(Intent_squats)
         }
         val Intent_deadbug : Intent =  Intent(/* packageContext = */ this,/* cls = */
-            DeadBug::class.java)
-        Intent_deadbug.putExtra("maxRepetitions", 20)
-        Intent_deadbug.putExtra("ExercisesName", "Dead bug")
+            RepSelector::class.java)
+        Intent_deadbug.putExtra("ExercisesName", "Dead Bugs")
         button_deadbug.setOnClickListener {
             startActivity(Intent_deadbug)
 
