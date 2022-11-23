@@ -1,7 +1,11 @@
 package com.example.appli_watch.utils
 
+import android.content.Context
 import android.hardware.Sensor
 import android.hardware.SensorEvent
+import android.widget.Toast
+import com.example.appli_watch.MainActivity
+import java.time.Duration
 import kotlin.math.pow
 import kotlin.math.sqrt
 
@@ -11,17 +15,21 @@ class RepetitionDetector(private val exercise: Exercise) {
     var dataAccAll = Array(6) { mutableListOf(0.0) }
     var integralDataAll = Array(6) { mutableListOf(0.0) }
 
+    var pointsSkipped: Int = 0
+
     //end of to be changed later on
 
     var accelData = mutableListOf(0.0)
     var integralData = mutableListOf(0.0)
     var corr: Double = 0.0
 
+    var frequency: Float= 0f
+    var startTime: Long= 0L
+    var pointCount: Int = 0
+
     //working variables
-    var nbSquats = 0
     var waiting = false
     var waitCountdown = 0
-    val index = 0
     val G_CONST = 9.81
 
     private var currentTimeRepetition: Float = 0.0f
@@ -39,12 +47,25 @@ class RepetitionDetector(private val exercise: Exercise) {
 
     public fun update(event: SensorEvent?){
         if(event?.sensor?.type == Sensor.TYPE_LINEAR_ACCELERATION){
+            calculateSensorFrequency()
             updateAcceleration(event)
         }
         if(event?.sensor?.type == Sensor.TYPE_GRAVITY){
             updateGravity(event)
         }
-        patternReco()
+        val frequencyRatio = (frequency/exercisesConstantsRepo.SAMPLE_FREQUENCY).toInt()
+
+        if(frequencyRatio<1){
+            //IMPLEMENT BANNER
+        }
+
+        if(frequencyRatio >= (pointsSkipped-1)){
+            patternReco()
+            pointsSkipped = 0
+        }
+        else{
+            pointsSkipped +=1
+        }
     }
 
     public fun getNumberOfRepetitions(): Int{
@@ -82,6 +103,14 @@ class RepetitionDetector(private val exercise: Exercise) {
         }
          */
         return accVector
+    }
+
+    private fun calculateSensorFrequency() {
+        if (startTime == 0L) {
+            startTime = System.nanoTime()
+        }
+        val timestamp = System.nanoTime()
+        frequency = pointCount++ / ((timestamp - startTime) / 1000000000.0f)
     }
 
     private fun patternReco() {

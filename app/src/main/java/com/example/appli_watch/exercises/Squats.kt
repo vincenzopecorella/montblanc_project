@@ -62,11 +62,13 @@ class Squats() : Activity(), SensorEventListener, View.OnClickListener {
 
     override fun onSensorChanged(event: SensorEvent?) {
         if (pause){
+            repetitionTracker.startTime = 0L
+            repetitionTracker.pointCount = 0
             return
         }
         repetitionTracker.update(event)
-        counter.text = "${repetitionTracker.getNumberOfRepetitions()}"
-        if(repetitionTracker.getNumberOfRepetitions() >= maxRepetitions ){
+        counter.text = "${repetitionTracker.getNumberOfRepetitions()}" + " " + "${repetitionTracker.frequency}"
+                if(repetitionTracker.getNumberOfRepetitions() >= maxRepetitions ){
             val intent = Intent()
             setResult(RESULT_OK, intent)
             finish()
