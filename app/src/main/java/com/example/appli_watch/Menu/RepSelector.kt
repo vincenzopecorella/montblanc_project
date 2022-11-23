@@ -6,9 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import com.example.appli_watch.R
-import com.example.appli_watch.exercises.DeadBug
-import com.example.appli_watch.exercises.JumpingJacks
-import com.example.appli_watch.exercises.Squats
+import com.example.appli_watch.exercises.*
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class RepSelector : AppCompatActivity() {
@@ -53,7 +51,7 @@ class RepSelector : AppCompatActivity() {
             if(exercise_name == "Squats"){
                 val Intent_squats : Intent =  Intent(/* packageContext = */ this,/* cls = */
                     Squats::class.java)
-                Intent_squats.putExtra("maxRepetitions", 20)
+                Intent_squats.putExtra("maxRepetitions", maxRepetitions)
                 Intent_squats.putExtra("ExercisesName", exercise_name)
                 startActivity(Intent_squats)
             }
@@ -64,12 +62,19 @@ class RepSelector : AppCompatActivity() {
                 Intent_jumpingjacks.putExtra("ExercisesName", exercise_name)
                 startActivity(Intent_jumpingjacks)
             }
-            if(exercise_name == "Dead Bugs"){
-                val Intent_deadbug : Intent =  Intent(/* packageContext = */ this,/* cls = */
-                    DeadBug::class.java)
-                Intent_deadbug.putExtra("maxRepetitions", 20)
-                Intent_deadbug.putExtra("ExercisesName", exercise_name)
-                startActivity(Intent_deadbug)
+            if(exercise_name == "Lunges"){
+                val Intent_lunges : Intent =  Intent(/* packageContext = */ this,/* cls = */
+                    Lunges::class.java)
+                Intent_lunges.putExtra("maxRepetitions", maxRepetitions)
+                Intent_lunges.putExtra("ExercisesName", exercise_name)
+                startActivity(Intent_lunges)
+            }
+            if(exercise_name == "Bird Dogs"){
+                val Intent_birddogs : Intent =  Intent(/* packageContext = */ this,/* cls = */
+                    BirdDogs::class.java)
+                Intent_birddogs.putExtra("maxRepetitions", maxRepetitions)
+                Intent_birddogs.putExtra("ExercisesName", exercise_name)
+                startActivity(Intent_birddogs)
             }
         }
     }

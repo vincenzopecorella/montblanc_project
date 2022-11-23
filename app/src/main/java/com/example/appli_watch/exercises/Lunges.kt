@@ -17,18 +17,18 @@ import com.example.appli_watch.utils.Exercise
 import com.example.appli_watch.utils.RepetitionDetector
 
 
-class DeadBug() : Activity(), SensorEventListener, View.OnClickListener {
+class Lunges() : Activity(), SensorEventListener, View.OnClickListener {
     private lateinit var button_pause: Button
     private lateinit var sensorManager: SensorManager
     private lateinit var sensorManager2: SensorManager
     private lateinit var sensorManager3: SensorManager
     private lateinit var counter: TextView
-    private var pause: Boolean = false
+    private lateinit var exercise_name: String
     private var maxCorr: Double = 0.0
-    private val repetitionTracker: RepetitionDetector = RepetitionDetector(Exercise.DEAD_BUG)
+    private var pause: Boolean = false
+    private val repetitionTracker: RepetitionDetector = RepetitionDetector(Exercise.SQUAT)
     private var maxRepetitions: Int = 0
     private lateinit var exercise: TextView
-    private lateinit var exercise_name: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

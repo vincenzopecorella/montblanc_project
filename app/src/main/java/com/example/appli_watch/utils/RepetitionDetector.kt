@@ -127,7 +127,7 @@ class RepetitionDetector(private val exercise: Exercise) {
         val GREATEST_SAMPLE_SIZE = allConsts[8] as Int
 
         //fill dataAccAll, check function def for extra info
-        addData(dataAccAll, computeCurrentAccelerationVector().toDouble()/G_CONST, computeCurrentAccelerationVector().toDouble()/G_CONST)
+        addData(dataAccAll, computeCurrentAccelerationVector().toDouble(), computeCurrentAccelerationVector().toDouble())
 
         if (dataAccAll[0].size >= GREATEST_PEAK_WIDTH + 2) { //wait for all dimensions of dataAccAll to have sufficient amount of points to start integration
             //start dimension-respective integration to reduce noise in signal
@@ -210,13 +210,13 @@ fun corr_mix(dataAll: Array<MutableList<Double>>, sample: Array<Array<Double>>, 
     return mult_corr
 }
 
-fun removeData(data: Array<MutableList<Double>>,last_dim_to_remove: Int): Unit { //removes the first data point of each of the mutableLists of data
+fun removeData(data: Array<MutableList<Double>>,last_dim_to_remove: Int) { //removes the first data point of each of the mutableLists of data
     for (i in 0 until last_dim_to_remove) {
         data[i].removeAt(0)
     }
 }
 
-fun addData(data: Array<MutableList<Double>>, vararg input: Double): Unit { //input: put all data to be filled in their respective dimension in order, ex dataAccAll[0] = X, dataAccAll[1] = Y, then call initData(dataAccAll, X_value, Y_value)
+fun addData(data: Array<MutableList<Double>>, vararg input: Double) { //input: put all data to be filled in their respective dimension in order, ex dataAccAll[0] = X, dataAccAll[1] = Y, then call initData(dataAccAll, X_value, Y_value)
     var i = 0
     for (item in input) {
         data[i].add(item)

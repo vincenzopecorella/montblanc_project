@@ -16,6 +16,8 @@ class Menu_exercises : AppCompatActivity() {
     private lateinit var button_jumpingjacks: Button
     private lateinit var button_squats: Button
     private lateinit var button_deadbug: Button
+    private lateinit var button_birddogs: Button
+    private lateinit var button_lunges: Button
     private lateinit var time : TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +26,8 @@ class Menu_exercises : AppCompatActivity() {
         button_jumpingjacks = findViewById(R.id.jumpingjacks)
         button_squats = findViewById(R.id.squats)
         button_deadbug = findViewById(R.id.deadbugs)
+        button_birddogs = findViewById(R.id.birddogs)
+        button_lunges = findViewById(R.id.lunges)
 
         time = findViewById(R.id.HH)
 
@@ -49,7 +53,18 @@ class Menu_exercises : AppCompatActivity() {
         Intent_deadbug.putExtra("ExercisesName", "Dead Bugs")
         button_deadbug.setOnClickListener {
             startActivity(Intent_deadbug)
-
+        }
+        val Intent_birddogs : Intent =  Intent(/* packageContext = */ this,/* cls = */
+            RepSelector::class.java)
+        Intent_birddogs.putExtra("ExercisesName", "Bird Dogs")
+        button_birddogs.setOnClickListener {
+            startActivity(Intent_birddogs)
+        }
+        val Intent_lunges : Intent =  Intent(/* packageContext = */ this,/* cls = */
+            RepSelector::class.java)
+        Intent_lunges.putExtra("ExercisesName", "Lunges")
+        button_lunges.setOnClickListener {
+            startActivity(Intent_lunges)
         }
     }
 }

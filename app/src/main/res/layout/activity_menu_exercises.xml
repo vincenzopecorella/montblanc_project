@@ -88,6 +88,36 @@
                     app:icon="@drawable/deadbug"
                     app:iconGravity="textTop"
                     app:iconSize="40dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+                    android:id="@+id/birddogs"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginEnd="46dp"
+                    android:scaleType="centerInside"
+                    android:text="Bird Dogs"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:backgroundTint="#FB5223"
+                    app:cornerRadius="100dp"
+                    app:icon="@drawable/deadbug"
+                    app:iconGravity="textTop"
+                    app:iconSize="40dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+                    android:id="@+id/lunges"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginEnd="46dp"
+                    android:scaleType="centerInside"
+                    android:text="Lunges"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:backgroundTint="#FB5223"
+                    app:cornerRadius="100dp"
+                    app:icon="@drawable/deadbug"
+                    app:iconGravity="textTop"
+                    app:iconSize="40dp" />
             </androidx.gridlayout.widget.GridLayout>
         </HorizontalScrollView>
 
