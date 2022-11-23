@@ -46,25 +46,24 @@ class RepetitionDetector(private val exercise: Exercise) {
 
 
     public fun update(event: SensorEvent?){
+        val frequencyRatio = (frequency/exercisesConstantsRepo.SAMPLE_FREQUENCY).toInt()
         if(event?.sensor?.type == Sensor.TYPE_LINEAR_ACCELERATION){
             calculateSensorFrequency()
             updateAcceleration(event)
+            patternReco()
+            if(frequencyRatio >= (pointsSkipped-1)){
+                pointsSkipped = 0
+            }
+            else{
+                pointsSkipped +=1
+            }
         }
         if(event?.sensor?.type == Sensor.TYPE_GRAVITY){
             updateGravity(event)
         }
-        val frequencyRatio = (frequency/exercisesConstantsRepo.SAMPLE_FREQUENCY).toInt()
 
-        if(frequencyRatio<1){
+        if(frequencyRatio<0.8){
             //IMPLEMENT BANNER
-        }
-
-        if(frequencyRatio >= (pointsSkipped-1)){
-            patternReco()
-            pointsSkipped = 0
-        }
-        else{
-            pointsSkipped +=1
         }
     }
 

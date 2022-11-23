@@ -24,6 +24,7 @@ class Squats() : Activity(), SensorEventListener, View.OnClickListener {
     private lateinit var sensorManager3: SensorManager
     private lateinit var counter: TextView
     private lateinit var exercise_name: String
+    private var maxCorr: Double = 0.0
     private var pause: Boolean = false
     private val repetitionTracker: RepetitionDetector = RepetitionDetector(Exercise.SQUAT)
     private var maxRepetitions: Int = 0
@@ -67,8 +68,11 @@ class Squats() : Activity(), SensorEventListener, View.OnClickListener {
             return
         }
         repetitionTracker.update(event)
-        counter.text = "${repetitionTracker.getNumberOfRepetitions()}" + " " + "${repetitionTracker.frequency}"
-                if(repetitionTracker.getNumberOfRepetitions() >= maxRepetitions ){
+        if(repetitionTracker.corr > maxCorr){
+            maxCorr = repetitionTracker.corr
+        }
+        counter.text = "${repetitionTracker.getNumberOfRepetitions()}"+ "         " + "${maxCorr}"
+        if(repetitionTracker.getNumberOfRepetitions() >= maxRepetitions ){
             val intent = Intent()
             setResult(RESULT_OK, intent)
             finish()
