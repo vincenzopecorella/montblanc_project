@@ -6,7 +6,10 @@ import com.example.appli_watch.databinding.ActivityMainBinding
 import android.content.Intent
 import android.widget.Button
 import android.widget.TextView
-import com.example.appli_watch.Menu.Main_Menu
+import com.example.appli_watch.Menu.Main_menu_old
+import com.example.appli_watch.Menu.Menu_concierge
+import com.example.appli_watch.Menu.Menu_training
+import com.example.appli_watch.Menu.Menu_you
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -36,17 +39,17 @@ class MainActivity : Activity() {
 
 
         val Intent_Training : Intent =  Intent(/* packageContext = */ this,/* cls = */
-            Main_Menu::class.java)
+            Menu_training::class.java)
         button_trainings.setOnClickListener {
             startActivity(Intent_Training)
         }
         val Intent_concierge : Intent =  Intent(/* packageContext = */ this,/* cls = */
-            Main_Menu::class.java)
+            Menu_concierge::class.java)
         button_concierge.setOnClickListener {
             startActivity(Intent_concierge)
         }
         val Intent_profile : Intent =  Intent(/* packageContext = */ this,/* cls = */
-            Main_Menu::class.java)
+            Menu_you::class.java)
         button_profile.setOnClickListener {
             startActivity(Intent_profile)
         }

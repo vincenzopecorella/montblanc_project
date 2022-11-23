@@ -6,18 +6,17 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import com.example.appli_watch.R
-import com.example.appli_watch.start_squats
 import java.text.SimpleDateFormat
 import java.util.*
 
-class Main_Menu : AppCompatActivity() {
+class Main_menu_old : AppCompatActivity() {
     private lateinit var button_exercise: Button
     private lateinit var button_workout: Button
     private lateinit var button_warmup: Button
     private lateinit var time : TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_training_menu)
+        setContentView(R.layout.activity_training_menu_alpha)
 
         button_exercise = findViewById(R.id.button_exercise)
         button_workout = findViewById(R.id.button_workout)
@@ -36,12 +35,12 @@ class Main_Menu : AppCompatActivity() {
             startActivity(Intent_exercise)
         }
         val Intent_workout : Intent =  Intent(/* packageContext = */ this,/* cls = */
-            Menu_workout::class.java)
+            Menu_exercises::class.java)
         button_workout.setOnClickListener {
             startActivity(Intent_workout)
         }
         val Intent_warmup : Intent =  Intent(/* packageContext = */ this,/* cls = */
-            Menu_warmup::class.java)
+            Menu_exercises::class.java)
         button_warmup.setOnClickListener {
             startActivity(Intent_warmup)
         }

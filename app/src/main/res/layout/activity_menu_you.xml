@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Menu.Menu_you"
+    tools:deviceIds="wear"
+    android:background="#000000">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:textAlignment="center">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="You"
+            android:gravity="center"
+            android:textSize="22dp"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="#A93226"/>
+
+        <ScrollView
+            android:layout_gravity="center"
+            android:layout_width="185dp"
+            android:layout_height="150dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
+                <androidx.gridlayout.widget.GridLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="-0dp"
+                    android:gravity="center"
+                    android:layout_gravity="center">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/reco"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:adjustViewBounds="true"
+                        android:text="Recommend"
+                        android:fontFamily="sans-serif"
+                        android:textColor="#FDFEFE"
+                        android:scaleType="centerInside"
+                        android:textAllCaps="false"
+                        android:theme="@style/Theme.MaterialComponents.Light"
+                        app:backgroundTint="#FB5223"
+                        app:cornerRadius="50dp"
+                        app:layout_column="0"
+                        app:layout_row="0" />
+
+                </androidx.gridlayout.widget.GridLayout>
+
+
+                <androidx.gridlayout.widget.GridLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="-0dp"
+                    android:gravity="center"
+                    android:layout_gravity="center">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/historic"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:adjustViewBounds="true"
+                        android:text="Historic"
+                        android:fontFamily="sans-serif"
+                        android:textColor="#FDFEFE"
+                        android:scaleType="centerInside"
+                        android:textAllCaps="false"
+                        android:theme="@style/Theme.MaterialComponents.Light"
+                        app:backgroundTint="#FB5223"
+                        app:cornerRadius="50dp"
+                        app:layout_column="0"
+                        app:layout_row="0" />
+
+                </androidx.gridlayout.widget.GridLayout>
+
+
+                <androidx.gridlayout.widget.GridLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="-0dp"
+                    android:gravity="center"
+                    android:layout_gravity="center">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/analyses"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:adjustViewBounds="true"
+                        android:text="Analyses"
+                        android:fontFamily="sans-serif"
+                        android:textColor="#FDFEFE"
+                        android:scaleType="centerInside"
+                        android:textAllCaps="false"
+                        android:theme="@style/Theme.MaterialComponents.Light"
+                        app:backgroundTint="#FB5223"
+                        app:cornerRadius="50dp"
+                        app:layout_column="0"
+                        app:layout_row="0" />
+
+                </androidx.gridlayout.widget.GridLayout>
+
+
+                <androidx.gridlayout.widget.GridLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="-0dp"
+                    android:gravity="center"
+                    android:layout_gravity="center">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/data"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:adjustViewBounds="true"
+                        android:text="Personal Data"
+                        android:fontFamily="sans-serif"
+                        android:textColor="#FDFEFE"
+                        android:scaleType="centerInside"
+                        android:textAllCaps="false"
+                        android:theme="@style/Theme.MaterialComponents.Light"
+                        app:backgroundTint="#FB5223"
+                        app:cornerRadius="50dp"
+                        app:layout_column="0"
+                        app:layout_row="0" />
+
+                </androidx.gridlayout.widget.GridLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="3dp" />
+
+        <TextView
+            android:id="@+id/HH"
+            android:layout_width="match_parent"
+            android:layout_height="29dp"
+            android:text="VOID"
+            android:gravity="center"
+            android:fontFamily="sans-serif-thin"
+            android:textSize="15dp"
+            android:textColor="#FDFEFE"/>
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

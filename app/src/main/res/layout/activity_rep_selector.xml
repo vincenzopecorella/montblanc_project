@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:padding="@dimen/box_inset_layout_padding"
     tools:context=".MainActivity"
-    tools:deviceIds="wear">
+    tools:deviceIds="wear"
+    android:background="#000000">
 
 
 
@@ -17,7 +18,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="12dp" />
+            android:layout_height="18dp" />
 
         <TextView
             android:id="@+id/trainingTitle"
@@ -25,14 +26,25 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="VOID"
+            android:textColor="#FDFEFE"
+            android:fontFamily="sans-serif-medium"
             android:textSize="20dp" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="2dp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Select the number of repetitions"
+            android:fontFamily="sans-serif-light"
+            android:textColor="#FDFEFE"
             android:textSize="10sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -53,12 +65,15 @@
             <TextView
                 android:id="@+id/count"
                 android:layout_width="35dp"
-                android:layout_height="53dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="bottom|center"
+                android:gravity="center"
+                android:layout_gravity="center|center"
                 android:text="0"
+                android:textColor="#FDFEFE"
+                android:fontFamily="sans-serif-medium"
                 android:textAlignment="center"
-                android:textSize="20dp" />
+                android:textSize="30dp" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/add"
@@ -73,19 +88,42 @@
 
         </LinearLayout>
 
-        <Button
-            android:id="@+id/confirmation"
-            android:layout_width="match_parent"
+        <androidx.gridlayout.widget.GridLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Confirm" />
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="-0dp"
+            android:gravity="center"
+            android:layout_gravity="center">
 
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/confirmation"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:adjustViewBounds="true"
+                android:text="Confirm"
+                android:fontFamily="sans-serif"
+                android:textColor="#FDFEFE"
+                app:layout_gravity="center_vertical"
+                android:scaleType="centerInside"
+                android:textAllCaps="false"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                app:backgroundTint="#21618C"
+                app:cornerRadius="10dp"/>
+
+        </androidx.gridlayout.widget.GridLayout>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="3dp" />
         <TextView
             android:id="@+id/HH"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="VOID"
-            android:textSize="15dp" />
+            android:textColor="#FDFEFE"
+            android:textSize="15dp"
+            android:fontFamily="sans-serif-thin"/>
 
     </LinearLayout>
 

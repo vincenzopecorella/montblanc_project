@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.wear.widget.BoxInsetLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Menu.Menu_training"
+    tools:deviceIds="wear"
+    android:background="#000000">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:textAlignment="center">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Training"
+            android:gravity="center"
+            android:textSize="22dp"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="#21618C"/>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:verticalScrollbarPosition="right">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Warm - ups"
+                    android:layout_marginLeft="30dp"
+                    android:gravity="center_vertical"
+                    android:textSize="16dp"
+                    android:fontFamily="sans-serif-light"
+                    android:textColor="#FDFEFE  "/>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="6dp" />
+
+
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fillViewport="true"
+                    android:scrollbars="none">
+
+                    <androidx.gridlayout.widget.GridLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginEnd="-0dp"
+                        android:gravity="center">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/golf"
+                            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerInside"
+                            android:theme="@style/Theme.MaterialComponents.Light"
+                            app:backgroundTint="#258EA6"
+                            app:cornerRadius="100dp"
+                            app:icon="@drawable/golf"
+                            app:iconGravity="top"
+                            app:iconTint="#FDFEFE"
+                            app:iconSize="40dp"
+                            app:layout_column="0"
+                            app:layout_row="0" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/squash"
+                            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginEnd="20dp"
+                            android:scaleType="centerInside"
+                            android:theme="@style/Theme.MaterialComponents.Light"
+                            app:backgroundTint="#258EA6"
+                            app:cornerRadius="100dp"
+                            app:icon="@drawable/squash"
+                            app:iconGravity="top"
+                            app:iconTint="#FDFEFE"
+                            app:iconSize="40dp"/>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/horse"
+                            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginEnd="20dp"
+                            android:scaleType="centerInside"
+                            android:theme="@style/Theme.MaterialComponents.Light"
+                            app:backgroundTint="#258EA6"
+                            app:cornerRadius="100dp"
+                            app:icon="@drawable/cheval"
+                            app:iconGravity="top"
+                            app:iconTint="#FDFEFE"
+                            app:iconSize="40dp" />
+                    </androidx.gridlayout.widget.GridLayout>
+                </HorizontalScrollView>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Workouts"
+                    android:layout_marginLeft="30dp"
+                    android:gravity="center_vertical"
+                    android:textSize="16dp"
+                    android:fontFamily="sans-serif-light"
+                    android:textColor="#FDFEFE  "/>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="6dp" />
+
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fillViewport="true"
+                    android:scrollbars="none">
+
+                    <androidx.gridlayout.widget.GridLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginEnd="-0dp"
+                        android:gravity="center">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/beginner"
+                            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerInside"
+                            android:theme="@style/Theme.MaterialComponents.Light"
+                            app:backgroundTint="#258EA6"
+                            app:cornerRadius="100dp"
+                            app:icon="@drawable/workout1"
+                            app:iconGravity="top"
+                            app:iconTint="#FDFEFE"
+                            app:iconSize="40dp"
+                            app:layout_column="0"
+                            app:layout_row="0" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/intermediary"
+                            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginEnd="20dp"
+                            android:scaleType="centerInside"
+                            android:theme="@style/Theme.MaterialComponents.Light"
+                            app:backgroundTint="#258EA6"
+                            app:cornerRadius="100dp"
+                            app:icon="@drawable/workout2"
+                            app:iconGravity="top"
+                            app:iconTint="#FDFEFE"
+                            app:iconSize="40dp"/>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/advanced"
+                            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginEnd="20dp"
+                            android:scaleType="centerInside"
+                            android:theme="@style/Theme.MaterialComponents.Light"
+                            app:backgroundTint="#258EA6"
+                            app:cornerRadius="100dp"
+                            app:icon="@drawable/workout3"
+                            app:iconGravity="top"
+                            app:iconTint="#FDFEFE"
+                            app:iconSize="40dp" />
+                    </androidx.gridlayout.widget.GridLayout>
+                </HorizontalScrollView>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Exercises"
+                    android:layout_marginLeft="30dp"
+                    android:gravity="center_vertical"
+                    android:textSize="16dp"
+                    android:fontFamily="sans-serif-light"
+                    android:textColor="#FDFEFE  "/>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="6dp" />
+
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fillViewport="true"
+                    android:scrollbars="none">
+
+                    <androidx.gridlayout.widget.GridLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginEnd="-0dp"
+                        android:gravity="center">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/jumpingjacks"
+                            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerInside"
+                            android:theme="@style/Theme.MaterialComponents.Light"
+                            app:backgroundTint="#258EA6"
+                            app:cornerRadius="100dp"
+                            app:icon="@drawable/jumpingjacks"
+                            app:iconGravity="top"
+                            app:iconTint="#FDFEFE"
+                            app:iconSize="40dp"
+                            app:layout_column="0"
+                            app:layout_row="0" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/squats"
+                            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginEnd="20dp"
+                            android:scaleType="centerInside"
+                            android:theme="@style/Theme.MaterialComponents.Light"
+                            app:backgroundTint="#258EA6"
+                            app:cornerRadius="100dp"
+                            app:icon="@drawable/squats"
+                            app:iconGravity="top"
+                            app:iconTint="#FDFEFE"
+                            app:iconSize="40dp"/>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/deadbug"
+                            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginEnd="20dp"
+                            android:scaleType="centerInside"
+                            android:theme="@style/Theme.MaterialComponents.Light"
+                            app:backgroundTint="#258EA6"
+                            app:cornerRadius="100dp"
+                            app:icon="@drawable/deadbug"
+                            app:iconGravity="top"
+                            app:iconTint="#FDFEFE"
+                            app:iconSize="40dp" />
+                    </androidx.gridlayout.widget.GridLayout>
+                </HorizontalScrollView>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="3dp" />
+
+        <TextView
+            android:id="@+id/HH"
+            android:layout_width="match_parent"
+            android:layout_height="29dp"
+            android:text="VOID"
+            android:gravity="center"
+            android:fontFamily="sans-serif-thin"
+            android:textSize="15dp"
+            android:textColor="#FDFEFE"/>
+
+    </LinearLayout>
+</androidx.wear.widget.BoxInsetLayout>

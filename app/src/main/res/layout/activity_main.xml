@@ -13,19 +13,25 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#000000"
         android:orientation="vertical">
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="12dp" />
+            android:layout_height="18dp" />
 
         <TextView
             android:id="@+id/trainingTitle"
             android:layout_width="match_parent"
             android:layout_height="38dp"
             android:gravity="center"
+            android:fontFamily="sans-serif-medium"
             android:text="GYMHIIT"
-            android:textSize="20dp" />
+            android:textSize="30dp"
+            android:textColor="#FDFEFE"/>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="12dp" />
 
         <HorizontalScrollView
             android:layout_width="wrap_content"
@@ -50,11 +56,14 @@
                     android:adjustViewBounds="true"
                     android:scaleType="centerInside"
                     android:text="TRAIN"
+                    android:fontFamily="sans-serif"
+                    android:textColor="#FDFEFE"
                     android:theme="@style/Theme.MaterialComponents.Light"
-                    app:backgroundTint="#FB5223"
+                    app:backgroundTint="#258EA6"
                     app:cornerRadius="100dp"
                     app:icon="@drawable/stretching"
                     app:iconGravity="textTop"
+                    app:iconTint="#FDFEFE"
                     app:iconSize="40dp" />
 
                 <com.google.android.material.button.MaterialButton
@@ -65,10 +74,13 @@
                     android:layout_marginEnd="20dp"
                     android:scaleType="centerInside"
                     android:text="ASK"
+                    android:fontFamily="sans-serif"
+                    android:textColor="#FDFEFE"
                     android:theme="@style/Theme.MaterialComponents.Light"
                     app:backgroundTint="#72B83D"
                     app:cornerRadius="100dp"
-                    app:icon="@drawable/bell"
+                    app:icon="@drawable/accueil"
+                    app:iconTint="#FDFEFE"
                     app:iconGravity="textTop"
                     app:iconSize="40dp" />
 
@@ -80,22 +92,29 @@
                     android:layout_marginEnd="46dp"
                     android:scaleType="centerInside"
                     android:text="YOU"
+                    android:fontFamily="sans-serif"
+                    android:textColor="#FDFEFE"
                     android:theme="@style/Theme.MaterialComponents.Light"
-                    app:backgroundTint="#258EA6"
+                    app:backgroundTint="#FB5223"
                     app:cornerRadius="100dp"
                     app:icon="@drawable/user"
+                    app:iconTint="#FDFEFE"
                     app:iconGravity="textTop"
                     app:iconSize="40dp" />
             </androidx.gridlayout.widget.GridLayout>
         </HorizontalScrollView>
-
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="12dp" />
         <TextView
             android:id="@+id/HH"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="VOID"
-            android:textSize="15dp" />
+            android:textColor="#FDFEFE"
+            android:fontFamily="sans-serif-thin"
+            android:textSize="20dp" />
     </LinearLayout>
 
 

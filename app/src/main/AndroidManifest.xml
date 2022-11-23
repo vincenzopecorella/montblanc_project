@@ -12,15 +12,7 @@
         android:supportsRtl="true"
         android:theme="@android:style/Theme.DeviceDefault">
         <activity
-            android:name=".Menu.RepSelector"
-            android:exported="true"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".Menu.Menu_workout"
+            android:name=".Menu.End"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <meta-data
@@ -28,7 +20,31 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".exercises.DeadBug"
+            android:name=".Menu.Start"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Menu.Menu_you"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Menu.Menu_concierge"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Menu.Menu_training"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <meta-data
@@ -52,7 +68,15 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".exercises.JumpingJacks"
+            android:name=".Menu.RepSelector"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".exercises.DeadBug"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <meta-data
@@ -60,7 +84,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Menu.Menu_warmup"
+            android:name=".exercises.JumpingJacks"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <meta-data
@@ -76,7 +100,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Menu.Main_Menu"
+            android:name=".Menu.Main_menu_old"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <meta-data
