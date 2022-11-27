@@ -51,6 +51,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
+
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/remove"
                 style="Widget.AppCompat.Button.Borderless"
@@ -118,7 +119,7 @@
         <TextView
             android:id="@+id/HH"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="20dp"
             android:gravity="center"
             android:text="VOID"
             android:textColor="#FDFEFE"

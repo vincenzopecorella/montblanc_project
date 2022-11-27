@@ -24,12 +24,21 @@ class Menu_you : AppCompatActivity() {
         button_analyses = findViewById(R.id.analyses)
         button_data = findViewById(R.id.data)
 
-        time = findViewById(R.id.HH)
+        val thread: Thread = object : Thread() {
+            override fun run() {
+                try {
+                    while (true) {
+                        val sdf = SimpleDateFormat("HH:mm", Locale.getDefault())
+                        val currentTime = sdf.format(Date())
+                        time.text = currentTime
+                    }
+                } catch (e: InterruptedException) {
+                    e.printStackTrace()
+                }
+            }
+        }
 
-        val sdf = SimpleDateFormat("HH:mm", Locale.getDefault())
-        val currentTime = sdf.format(Date())
-
-        time.text = currentTime
+        thread.start();
 
         val Intent_reco : Intent =  Intent(/* packageContext = */ this,/* cls = */
             Menu_training::class.java)

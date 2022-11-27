@@ -37,10 +37,21 @@ class Menu_training : AppCompatActivity() {
 
         time = findViewById(R.id.HH)
 
-        val sdf = SimpleDateFormat("HH:mm", Locale.getDefault())
-        val currentTime = sdf.format(Date())
+        val thread: Thread = object : Thread() {
+            override fun run() {
+                try {
+                    while (true) {
+                        val sdf = SimpleDateFormat("HH:mm", Locale.getDefault())
+                        val currentTime = sdf.format(Date())
+                        time.text = currentTime
+                    }
+                } catch (e: InterruptedException) {
+                    e.printStackTrace()
+                }
+            }
+        }
 
-        time.text = currentTime
+        thread.start();
 
         val Intent_golf : Intent =  Intent(/* packageContext = */ this,/* cls = */
             Menu_training::class.java)

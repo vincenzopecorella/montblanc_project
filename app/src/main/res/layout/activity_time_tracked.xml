@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.wear.widget.BoxInsetLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    tools:deviceIds="wear">
+    tools:deviceIds="wear"
+    android:background="#000000">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,52 +15,169 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="42dp" />
+            android:layout_height="10dp" />
+
+        <TextView
+            android:id="@+id/timepast"
+            android:layout_width="match_parent"
+            android:layout_height="18dp"
+            android:gravity="center"
+            android:text="VOID"
+            android:textColor="#FDFEFE"
+            android:textSize="12dp"
+            android:fontFamily="sans-serif-thin"/>
+
 
         <TextView
             android:id="@+id/exercisesName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Void"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="#FDFEFE"
             android:textAlignment="center"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textSize="18dp"/>
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="27dp" />
+            android:layout_height="0dp" />
 
         <TextView
-            android:id="@+id/descriptionExercise"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLines="10"
-            android:text="Time left:"
+            android:textColor="#FDFEFE"
+            android:text="Time left :"
+            android:fontFamily="sans-serif-light"
             android:textAlignment="center"
-            android:textSize="14sp"
-            android:textStyle="bold" />
+            android:textSize="12dp"/>
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="10dp" />
 
+
         <TextView
-            android:id="@+id/timeLeft"
+            android:id="@+id/counter"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:text="20"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="#FDFEFE"
+            android:textSize="30dp"
+            android:fontFamily="sans-serif-light"
+            android:background="@drawable/bg_round"/>
+
+
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxLines="10"
-            android:text="Void"
-            android:textAlignment="center"
-            android:textSize="14sp" />
-    </LinearLayout>
-    <Button
-        android:id="@+id/button_pause"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
-        android:layout_gravity="center"
-        android:layout_marginBottom="-7dp"
-        android:text="Pause"
-        android:textSize="10sp" />
+            android:gravity="center"
+            android:orientation="horizontal">
 
-</RelativeLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/past"
+                style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="top"
+                android:padding="0dp"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                app:cornerRadius="100dp"
+                app:icon="@drawable/ic_baseline_arrow_forward_24"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:iconSize="15dp"
+                app:iconTint="#FDFEFE" />
+
+            <Space
+                android:layout_width="3dp"
+                android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/stop"
+                    android:visibility="visible"
+                    style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:clickable="true"
+                    android:layout_marginTop="11dp"
+                    android:layout_marginBottom="5dp"
+                    android:backgroundTint="#21618C"
+                    android:padding="0dp"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:cornerRadius="100dp"
+                    app:icon="@drawable/ic_baseline_pause_24"
+                    app:iconGravity="textStart"
+                    app:iconPadding="0dp"
+                    app:iconSize="20dp"
+                    app:iconTint="#FDFEFE" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/play"
+                    android:visibility="invisible"
+                    style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:clickable="false"
+                    android:layout_marginTop="11dp"
+                    android:layout_marginBottom="5dp"
+                    android:backgroundTint="#21618C"
+                    android:padding="0dp"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:cornerRadius="100dp"
+                    app:icon="@drawable/ic_baseline_arrow_right_24"
+                    app:iconGravity="textStart"
+                    app:iconPadding="0dp"
+                    app:iconSize="35dp"
+                    app:iconTint="#FDFEFE" />
+
+            </RelativeLayout>
+
+            <Space
+                android:layout_width="3dp"
+                android:layout_height="wrap_content" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/cancel"
+                style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="top"
+                android:padding="0dp"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                app:cornerRadius="100dp"
+                app:icon="@drawable/ic_baseline_clear_24"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:iconSize="15dp"
+                app:iconTint="#FDFEFE" />
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/HH"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:gravity="center"
+            android:text="VOID"
+            android:textColor="#FDFEFE"
+            android:textSize="12dp"
+            android:fontFamily="sans-serif-thin"/>
+
+    </LinearLayout>
+
+</androidx.wear.widget.BoxInsetLayout>

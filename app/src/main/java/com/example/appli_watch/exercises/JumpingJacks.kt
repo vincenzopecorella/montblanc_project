@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import com.example.appli_watch.R
 import com.example.appli_watch.utils.Exercise
 import com.example.appli_watch.utils.RepetitionDetector
+import java.util.*
 
 
 class JumpingJacks() : Activity(), SensorEventListener, View.OnClickListener {
@@ -29,6 +30,7 @@ class JumpingJacks() : Activity(), SensorEventListener, View.OnClickListener {
     private val repetitionTracker: RepetitionDetector = RepetitionDetector(Exercise.JUMPING_JACK)
     private var maxRepetitions: Int = 0
     private lateinit var exercise_name: String
+    private var time_ini: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,7 +40,7 @@ class JumpingJacks() : Activity(), SensorEventListener, View.OnClickListener {
         val intent = intent
         maxRepetitions = intent.getIntExtra("maxRepetitions", 0)
         exercise_name = intent.getStringExtra("ExercisesName").toString()
-
+        time_ini = intent.getIntExtra("Time_ini",0)
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         counter = findViewById(R.id.counter)
@@ -71,6 +73,7 @@ class JumpingJacks() : Activity(), SensorEventListener, View.OnClickListener {
         if(repetitionTracker.corr > maxCorr){
             maxCorr = repetitionTracker.corr
         }
+
         counter.text = "${repetitionTracker.getNumberOfRepetitions()}"+ "         " + "${maxCorr}"
         if(repetitionTracker.getNumberOfRepetitions() >= maxRepetitions ){
             val intent = Intent()

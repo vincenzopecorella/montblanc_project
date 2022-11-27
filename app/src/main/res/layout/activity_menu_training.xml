@@ -82,7 +82,9 @@
                             app:backgroundTint="#258EA6"
                             app:cornerRadius="100dp"
                             app:icon="@drawable/golf"
-                            app:iconGravity="top"
+                            app:iconPadding="0dp"
+                            android:padding="0dp"
+                            app:iconGravity="textStart"
                             app:iconTint="#FDFEFE"
                             app:iconSize="40dp"
                             app:layout_column="0"
@@ -100,7 +102,9 @@
                             app:backgroundTint="#258EA6"
                             app:cornerRadius="100dp"
                             app:icon="@drawable/squash"
-                            app:iconGravity="top"
+                            app:iconPadding="0dp"
+                            android:padding="0dp"
+                            app:iconGravity="textStart"
                             app:iconTint="#FDFEFE"
                             app:iconSize="40dp"/>
 
@@ -116,7 +120,9 @@
                             app:backgroundTint="#258EA6"
                             app:cornerRadius="100dp"
                             app:icon="@drawable/cheval"
-                            app:iconGravity="top"
+                            app:iconPadding="0dp"
+                            android:padding="0dp"
+                            app:iconGravity="textStart"
                             app:iconTint="#FDFEFE"
                             app:iconSize="40dp" />
                     </androidx.gridlayout.widget.GridLayout>
@@ -166,7 +172,9 @@
                             app:backgroundTint="#258EA6"
                             app:cornerRadius="100dp"
                             app:icon="@drawable/workout1"
-                            app:iconGravity="top"
+                            app:iconPadding="0dp"
+                            android:padding="0dp"
+                            app:iconGravity="textStart"
                             app:iconTint="#FDFEFE"
                             app:iconSize="40dp"
                             app:layout_column="0"
@@ -184,7 +192,9 @@
                             app:backgroundTint="#258EA6"
                             app:cornerRadius="100dp"
                             app:icon="@drawable/workout2"
-                            app:iconGravity="top"
+                            app:iconPadding="0dp"
+                            android:padding="0dp"
+                            app:iconGravity="textStart"
                             app:iconTint="#FDFEFE"
                             app:iconSize="40dp"/>
 
@@ -200,7 +210,9 @@
                             app:backgroundTint="#258EA6"
                             app:cornerRadius="100dp"
                             app:icon="@drawable/workout3"
-                            app:iconGravity="top"
+                            app:iconPadding="0dp"
+                            android:padding="0dp"
+                            app:iconGravity="textStart"
                             app:iconTint="#FDFEFE"
                             app:iconSize="40dp" />
                     </androidx.gridlayout.widget.GridLayout>
@@ -250,7 +262,9 @@
                             app:backgroundTint="#258EA6"
                             app:cornerRadius="100dp"
                             app:icon="@drawable/jumpingjacks"
-                            app:iconGravity="top"
+                            app:iconPadding="0dp"
+                            android:padding="0dp"
+                            app:iconGravity="textStart"
                             app:iconTint="#FDFEFE"
                             app:iconSize="40dp"
                             app:layout_column="0"
@@ -268,7 +282,9 @@
                             app:backgroundTint="#258EA6"
                             app:cornerRadius="100dp"
                             app:icon="@drawable/squats"
-                            app:iconGravity="top"
+                            app:iconPadding="0dp"
+                            android:padding="0dp"
+                            app:iconGravity="textStart"
                             app:iconTint="#FDFEFE"
                             app:iconSize="40dp"/>
 
@@ -284,7 +300,9 @@
                             app:backgroundTint="#258EA6"
                             app:cornerRadius="100dp"
                             app:icon="@drawable/deadbug"
-                            app:iconGravity="top"
+                            app:iconPadding="0dp"
+                            android:padding="0dp"
+                            app:iconGravity="textStart"
                             app:iconTint="#FDFEFE"
                             app:iconSize="40dp" />
                     </androidx.gridlayout.widget.GridLayout>
