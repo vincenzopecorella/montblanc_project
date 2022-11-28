@@ -58,7 +58,7 @@
 
 
         <TextView
-            android:id="@+id/counter"
+            android:id="@+id/timeLeft"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:text="20"

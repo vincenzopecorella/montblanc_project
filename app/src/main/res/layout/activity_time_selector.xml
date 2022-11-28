@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.wear.widget.BoxInsetLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Menu.TimeSelector"
+    tools:deviceIds="wear"
+    android:background="#000000">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="18dp" />
+
+        <TextView
+            android:id="@+id/trainingTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="VOID"
+            android:textColor="#FDFEFE"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="20dp" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="2dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Select the time"
+            android:fontFamily="sans-serif-light"
+            android:textColor="#FDFEFE"
+            android:textSize="10sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/remove"
+                style="Widget.AppCompat.Button.Borderless"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="bottom|right"
+                android:layout_margin="15dp"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                android:contentDescription="TODO"
+                app:srcCompat="@drawable/ic_baseline_remove_24" />
+
+            <TextView
+                android:id="@+id/count"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_gravity="center|center"
+                android:text="0"
+                android:textColor="#FDFEFE"
+                android:fontFamily="sans-serif-medium"
+                android:textAlignment="center"
+                android:textSize="30dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_gravity="center|center"
+                android:text="s"
+                android:textColor="#FDFEFE"
+                android:fontFamily="sans-serif"
+                android:textAlignment="center"
+                android:textSize="30dp" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/add"
+                style="Widget.AppCompat.Button.Borderless"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="bottom|right"
+                android:layout_margin="15dp"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                android:contentDescription="TODO"
+                app:srcCompat="@drawable/ic_baseline_add_24" />
+
+        </LinearLayout>
+
+        <androidx.gridlayout.widget.GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="-0dp"
+            android:gravity="center"
+            android:layout_gravity="center">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/confirmation"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:adjustViewBounds="true"
+                android:text="Confirm"
+                android:fontFamily="sans-serif"
+                android:textColor="#FDFEFE"
+                app:layout_gravity="center_vertical"
+                android:scaleType="centerInside"
+                android:textAllCaps="false"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                app:backgroundTint="#21618C"
+                app:cornerRadius="10dp"/>
+
+        </androidx.gridlayout.widget.GridLayout>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="3dp" />
+        <TextView
+            android:id="@+id/HH"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:gravity="center"
+            android:text="VOID"
+            android:textColor="#FDFEFE"
+            android:textSize="15dp"
+            android:fontFamily="sans-serif-thin"/>
+
+    </LinearLayout>
+
+
+</androidx.wear.widget.BoxInsetLayout>

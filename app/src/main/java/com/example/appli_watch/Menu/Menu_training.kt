@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import com.example.appli_watch.R
+import com.example.appli_watch.trainings.Golf
+import com.example.appli_watch.trainings.GolfBasicActivity
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -54,7 +56,7 @@ class Menu_training : AppCompatActivity() {
         thread.start();
 
         val Intent_golf : Intent =  Intent(/* packageContext = */ this,/* cls = */
-            Menu_training::class.java)
+            Golf::class.java)
         button_golf.setOnClickListener {
             startActivity(Intent_golf)
         }
@@ -90,7 +92,7 @@ class Menu_training : AppCompatActivity() {
             startActivity(Intent_squats)
         }
         val Intent_jumping : Intent =  Intent(/* packageContext = */ this,/* cls = */
-            RepSelector::class.java)
+            TimeSelector::class.java)
         Intent_jumping.putExtra("ExercisesName", "Jumping Jacks")
         button_jumping.setOnClickListener {
             startActivity(Intent_jumping)

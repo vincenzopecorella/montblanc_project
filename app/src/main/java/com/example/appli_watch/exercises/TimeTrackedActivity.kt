@@ -29,8 +29,11 @@ class TimeTrackedActivity : AppCompatActivity() {
     private var leftTime: Int = 0
     private var time_ini: Int = 0
     private lateinit var exerciseName: String
+    private lateinit var Nextexercise: String
+    private var NextRep: Int = 0
     private lateinit var time : TextView
     private lateinit var timepast : TextView
+    private var exo = arrayListOf<String>()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,6 +47,7 @@ class TimeTrackedActivity : AppCompatActivity() {
         initialTime = intent.getIntExtra("time", 0).toLong()
         exerciseName = intent.getStringExtra("ExercisesName").toString()
         time_ini = intent.getIntExtra("Time_ini",0)
+        exo = intent.getStringArrayListExtra("Exo") as ArrayList<String>
 
         val thread: Thread = object : Thread() {
             override fun run() {
@@ -112,8 +116,26 @@ class TimeTrackedActivity : AppCompatActivity() {
         button_pause = findViewById(R.id.stop)
         button_play = findViewById(R.id.play)
 
-        val intent_next = Intent(this, End::class.java)
-        intent_next.putExtra("Time_ini", time_ini)
+
+        NextRep = exo.get(2).toInt()
+        Nextexercise = exo.get(1)
+        exo.removeAt(1)
+        exo.removeAt(2)
+        val n = exo.get(0).toInt()-2
+        exo.set(0,"${n}")
+
+        exerciseString.text = exo.toString()
+
+        var intent_next = Intent()
+        if(Nextexercise=="Rest"){
+            intent_next = Intent(this, BreakActivity::class.java)
+            intent_next.putExtra("maxRepetitions", NextRep)
+            intent_next.putExtra("ExercisesName", Nextexercise)
+            intent_next.putExtra("Exo",exo)
+            intent_next.putExtra("Time_ini", time_ini)
+            exerciseString.text = Nextexercise.plus(" 3")
+        }
+
 
         exerciseString.text = exerciseName
         countdown = object: CountDownTimer(initialTime*1000,3){

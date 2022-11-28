@@ -9,16 +9,19 @@ import com.example.appli_watch.R
 import com.example.appli_watch.exercises.*
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.collections.ArrayList
 
 
 class Start : AppCompatActivity() {
     private lateinit var exercise_name: String
     private var maxRepetitions: Int = 0
+    private var timeselect: Int = 0
     private lateinit var exercise: TextView
     private lateinit var start: TextView
     private lateinit var time : TextView
     private lateinit var countdown: CountDownTimer
     private var time_ini: Int = 0
+    private var exo = arrayListOf<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,11 +29,19 @@ class Start : AppCompatActivity() {
 
         val intent = intent
         maxRepetitions = intent.getIntExtra("maxRepetitions", 0)
+        timeselect = intent.getIntExtra("Timeselection", 0)
         exercise_name = intent.getStringExtra("ExercisesName").toString()
+        exo = intent.getStringArrayListExtra("Exo") as ArrayList<String>
 
         exercise = findViewById(R.id.trainingTitle)
         start = findViewById(R.id.start)
-        exercise.text = maxRepetitions.toString().plus("  ").plus(exercise_name)
+        if(maxRepetitions==0){
+            exercise.text = timeselect.toString().plus("s   ").plus(exercise_name)
+        }
+        else{
+            exercise.text = exo.get(0)
+//            exercise.text = maxRepetitions.toString().plus("  ").plus(exercise_name)
+        }
 
         time = findViewById(R.id.HH)
 
@@ -67,34 +78,39 @@ class Start : AppCompatActivity() {
                     time_ini = sec_ini + min_ini*60+heure_ini*3600
 
                     val Intent_jumpingjacks: Intent =  Intent(/* packageContext = */ t,/* cls = */
-                        TimeTrackedActivity::class.java)
-                    Intent_jumpingjacks.putExtra("time", 15)
+                        JumpingJacks::class.java)
+                    Intent_jumpingjacks.putExtra("maxRepetitions", maxRepetitions)
                     Intent_jumpingjacks.putExtra("ExercisesName", exercise_name)
                     Intent_jumpingjacks.putExtra("Time_ini", time_ini)
+                    Intent_jumpingjacks.putExtra("Exo",exo)
 
                     val Intent_deadbug : Intent =  Intent(/* packageContext = */ t,/* cls = */
                         DeadBug::class.java)
                     Intent_deadbug.putExtra("maxRepetitions", maxRepetitions)
                     Intent_deadbug.putExtra("ExercisesName", exercise_name)
                     Intent_deadbug.putExtra("Time_ini", time_ini)
+                    Intent_deadbug.putExtra("Exo",exo)
 
                     val Intent_squats : Intent =  Intent(/* packageContext = */ t,/* cls = */
                         Squats::class.java)
                     Intent_squats.putExtra("maxRepetitions", maxRepetitions)
                     Intent_squats.putExtra("ExercisesName", exercise_name)
                     Intent_squats.putExtra("Time_ini", time_ini)
+                    Intent_squats.putExtra("Exo",exo)
 
                     val Intent_lunges : Intent =  Intent(/* packageContext = */ t,/* cls = */
                         Lunges::class.java)
                     Intent_lunges.putExtra("maxRepetitions", maxRepetitions)
                     Intent_lunges.putExtra("ExercisesName", exercise_name)
                     Intent_lunges.putExtra("Time_ini", time_ini)
+                    Intent_lunges.putExtra("Exo",exo)
 
                     val Intent_birddogs : Intent =  Intent(/* packageContext = */ t,/* cls = */
                         BirdDogs::class.java)
                     Intent_birddogs.putExtra("maxRepetitions", maxRepetitions)
                     Intent_birddogs.putExtra("ExercisesName", exercise_name)
                     Intent_birddogs.putExtra("Time_ini", time_ini)
+                    Intent_birddogs.putExtra("Exo",exo)
 
 
                     if(exercise_name == "Squats"){

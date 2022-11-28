@@ -24,6 +24,8 @@ class Menu_you : AppCompatActivity() {
         button_analyses = findViewById(R.id.analyses)
         button_data = findViewById(R.id.data)
 
+        time = findViewById(R.id.HH)
+
         val thread: Thread = object : Thread() {
             override fun run() {
                 try {

@@ -19,7 +19,7 @@ class BreakActivity : AppCompatActivity() {
         setContentView(R.layout.activity_break)
 
         val intent = intent
-        time = intent.getIntExtra("time", 0).toLong()
+        time = intent.getIntExtra("maxRepetitions", 0).toLong()
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
 
         rest = findViewById(R.id.timeLeft)
