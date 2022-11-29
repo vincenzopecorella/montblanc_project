@@ -13,7 +13,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class Golf : AppCompatActivity() {
-    private var exo = arrayListOf<String>("6","Jumping Jacks","10","Rest","10","Squats","20","End","0")
+    private var exo = arrayListOf<String>("6","Push Ups","14","Rest","10","Climbers","20","Rest","13","Dips","7","Rest","3","Board","18","End","0")
     private lateinit var workout: TextView
     private lateinit var exercises: TextView
     private lateinit var start: Button
@@ -67,7 +67,7 @@ class Golf : AppCompatActivity() {
         start.setOnClickListener {
             val Intent_start : Intent =  Intent(/* packageContext = */ this,/* cls = */
                 Start::class.java)
-            Intent_start.putExtra("maxRepetitions", maxRepetitions)
+            Intent_start.putExtra("Timeselection", maxRepetitions)
             Intent_start.putExtra("ExercisesName", exercise_name)
             Intent_start.putExtra("Exo",exo)
             startActivity(Intent_start)

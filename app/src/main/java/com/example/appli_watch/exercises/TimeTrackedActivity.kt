@@ -31,6 +31,7 @@ class TimeTrackedActivity : AppCompatActivity() {
     private lateinit var exerciseName: String
     private lateinit var Nextexercise: String
     private var NextRep: Int = 0
+    private lateinit var intent_next: Intent
     private lateinit var time : TextView
     private lateinit var timepast : TextView
     private var exo = arrayListOf<String>()
@@ -124,18 +125,112 @@ class TimeTrackedActivity : AppCompatActivity() {
         val n = exo.get(0).toInt()-2
         exo.set(0,"${n}")
 
-        var intent_next = Intent()
         if(Nextexercise=="End"){
             intent_next = Intent(this, End::class.java)
             intent_next.putExtra("Time_ini", time_ini)
         }
         else if(Nextexercise=="Rest"){
             intent_next = Intent(this, BreakActivity::class.java)
+            intent_next.putExtra("Timeselection", NextRep)
+            intent_next.putExtra("ExercisesName", Nextexercise)
+            intent_next.putExtra("Time_ini", time_ini)
+            intent_next.putExtra("Exo",exo)
+        }
+        else if(Nextexercise=="Squats"){
+            intent_next = Intent(this, Squats::class.java)
             intent_next.putExtra("maxRepetitions", NextRep)
             intent_next.putExtra("ExercisesName", Nextexercise)
             intent_next.putExtra("Time_ini", time_ini)
             intent_next.putExtra("Exo",exo)
         }
+        else if(Nextexercise=="Jumping Jacks"){
+            intent_next = Intent(this, JumpingJacks::class.java)
+            intent_next.putExtra("maxRepetitions", NextRep)
+            intent_next.putExtra("ExercisesName", Nextexercise)
+            intent_next.putExtra("Time_ini", time_ini)
+            intent_next.putExtra("Exo",exo)
+        }
+        else if(Nextexercise=="Dead Bugs"){
+            intent_next = Intent(this, DeadBug::class.java)
+            intent_next.putExtra("maxRepetitions", NextRep)
+            intent_next.putExtra("ExercisesName", Nextexercise)
+            intent_next.putExtra("Time_ini", time_ini)
+            intent_next.putExtra("Exo",exo)
+        }
+        else if(Nextexercise=="Lunges"){
+            intent_next = Intent(this, Lunges::class.java)
+            intent_next.putExtra("maxRepetitions", NextRep)
+            intent_next.putExtra("ExercisesName", Nextexercise)
+            intent_next.putExtra("Time_ini", time_ini)
+            intent_next.putExtra("Exo",exo)
+        }
+        else if(Nextexercise=="Bird Dogs"){
+            intent_next = Intent(this, BirdDogs::class.java)
+            intent_next.putExtra("maxRepetitions", NextRep)
+            intent_next.putExtra("ExercisesName", Nextexercise)
+            intent_next.putExtra("Time_ini", time_ini)
+            intent_next.putExtra("Exo",exo)
+        }
+        else if(Nextexercise=="Sit Ups"){
+            intent_next = Intent(this, BirdDogs::class.java)
+            intent_next.putExtra("maxRepetitions", NextRep)
+            intent_next.putExtra("ExercisesName", Nextexercise)
+            intent_next.putExtra("Time_ini", time_ini)
+            intent_next.putExtra("Exo",exo)
+        }
+        else if(Nextexercise=="Push Ups"){
+            intent_next = Intent(this, TimeTrackedActivity::class.java)
+            intent_next.putExtra("Timeselection", NextRep)
+            intent_next.putExtra("ExercisesName", Nextexercise)
+            intent_next.putExtra("Time_ini", time_ini)
+            intent_next.putExtra("Exo",exo)
+        }
+        else if(Nextexercise=="Board"){
+            intent_next = Intent(this, TimeTrackedActivity::class.java)
+            intent_next.putExtra("Timeselection", NextRep)
+            intent_next.putExtra("ExercisesName", Nextexercise)
+            intent_next.putExtra("Time_ini", time_ini)
+            intent_next.putExtra("Exo",exo)
+        }
+        else if(Nextexercise=="High Knees"){
+            intent_next = Intent(this, TimeTrackedActivity::class.java)
+            intent_next.putExtra("Timeselection", NextRep)
+            intent_next.putExtra("ExercisesName", Nextexercise)
+            intent_next.putExtra("Time_ini", time_ini)
+            intent_next.putExtra("Exo",exo)
+        }
+        else if(Nextexercise=="Butt Kicks"){
+            intent_next = Intent(this, TimeTrackedActivity::class.java)
+            intent_next.putExtra("Timeselection", NextRep)
+            intent_next.putExtra("ExercisesName", Nextexercise)
+            intent_next.putExtra("Time_ini", time_ini)
+            intent_next.putExtra("Exo",exo)
+        }
+        else if(Nextexercise=="Dips"){
+            intent_next = Intent(this, TimeTrackedActivity::class.java)
+            intent_next.putExtra("Timeselection", NextRep)
+            intent_next.putExtra("ExercisesName", Nextexercise)
+            intent_next.putExtra("Time_ini", time_ini)
+            intent_next.putExtra("Exo",exo)
+        }
+        else if(Nextexercise=="Climbers"){
+            intent_next = Intent(this, TimeTrackedActivity::class.java)
+            intent_next.putExtra("Timeselection", NextRep)
+            intent_next.putExtra("ExercisesName", Nextexercise)
+            intent_next.putExtra("Time_ini", time_ini)
+            intent_next.putExtra("Exo",exo)
+        }
+        else if(Nextexercise=="Arm Circles"){
+            intent_next = Intent(this, TimeTrackedActivity::class.java)
+            intent_next.putExtra("Timeselection", NextRep)
+            intent_next.putExtra("ExercisesName", Nextexercise)
+            intent_next.putExtra("Time_ini", time_ini)
+            intent_next.putExtra("Exo",exo)
+        }
+        else{
+            intent_next = Intent(this, MainActivity::class.java)
+        }
+
 
         exerciseString.text = exerciseName
         countdown = object: CountDownTimer(initialTime*1000,3){
