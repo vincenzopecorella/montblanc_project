@@ -44,7 +44,7 @@ class TimeTrackedActivity : AppCompatActivity() {
         timepast = findViewById(R.id.timepast)
 
         val intent = intent
-        initialTime = intent.getIntExtra("time", 0).toLong()
+        initialTime = intent.getIntExtra("Timeselection", 0).toLong()
         exerciseName = intent.getStringExtra("ExercisesName").toString()
         time_ini = intent.getIntExtra("Time_ini",0)
         exo = intent.getStringArrayListExtra("Exo") as ArrayList<String>
@@ -120,22 +120,22 @@ class TimeTrackedActivity : AppCompatActivity() {
         NextRep = exo.get(2).toInt()
         Nextexercise = exo.get(1)
         exo.removeAt(1)
-        exo.removeAt(2)
+        exo.removeAt(1)
         val n = exo.get(0).toInt()-2
         exo.set(0,"${n}")
 
-        exerciseString.text = exo.toString()
-
         var intent_next = Intent()
-        if(Nextexercise=="Rest"){
+        if(Nextexercise=="End"){
+            intent_next = Intent(this, End::class.java)
+            intent_next.putExtra("Time_ini", time_ini)
+        }
+        else if(Nextexercise=="Rest"){
             intent_next = Intent(this, BreakActivity::class.java)
             intent_next.putExtra("maxRepetitions", NextRep)
             intent_next.putExtra("ExercisesName", Nextexercise)
-            intent_next.putExtra("Exo",exo)
             intent_next.putExtra("Time_ini", time_ini)
-            exerciseString.text = Nextexercise.plus(" 3")
+            intent_next.putExtra("Exo",exo)
         }
-
 
         exerciseString.text = exerciseName
         countdown = object: CountDownTimer(initialTime*1000,3){
@@ -146,8 +146,6 @@ class TimeTrackedActivity : AppCompatActivity() {
 
             override fun onFinish() {
                 startActivity(intent_next)
-//                setResult(RESULT_OK, intent_next)
-//                finish()
             }
         }
         countdown.start()
@@ -179,16 +177,12 @@ class TimeTrackedActivity : AppCompatActivity() {
 
                 override fun onFinish() {
                     startActivity(intent_next)
-//                setResult(RESULT_OK, intent_next)
-//                finish()
                 }
             }
         }
         button_past.setOnClickListener {
             startActivity(intent_next)
             countdown.cancel()
-//            setResult(RESULT_OK, intent_next)
-//            finish()
         }
         button_cancel.setOnClickListener {
             val intent_cancel = Intent(/* packageContext = */ this,/* cls = */

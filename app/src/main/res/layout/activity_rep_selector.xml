@@ -109,7 +109,7 @@
                 android:scaleType="centerInside"
                 android:textAllCaps="false"
                 android:theme="@style/Theme.MaterialComponents.Light"
-                app:backgroundTint="#21618C"
+                app:backgroundTint="#229954"
                 app:cornerRadius="10dp"/>
 
         </androidx.gridlayout.widget.GridLayout>

@@ -305,6 +305,215 @@
                             app:iconGravity="textStart"
                             app:iconTint="#FDFEFE"
                             app:iconSize="40dp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/lunges"
+                            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginEnd="20dp"
+                            android:scaleType="centerInside"
+                            android:theme="@style/Theme.MaterialComponents.Light"
+                            app:backgroundTint="#258EA6"
+                            app:cornerRadius="100dp"
+                            app:icon="@drawable/lunges"
+                            app:iconPadding="0dp"
+                            android:padding="0dp"
+                            app:iconGravity="textStart"
+                            app:iconTint="#FDFEFE"
+                            app:iconSize="40dp" />
+
+                    </androidx.gridlayout.widget.GridLayout>
+                </HorizontalScrollView>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fillViewport="true"
+                    android:scrollbars="none">
+
+                    <androidx.gridlayout.widget.GridLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginEnd="-0dp"
+                        android:gravity="center">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/bird"
+                            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerInside"
+                            android:theme="@style/Theme.MaterialComponents.Light"
+                            app:backgroundTint="#258EA6"
+                            app:cornerRadius="100dp"
+                            app:icon="@drawable/bird"
+                            app:iconPadding="0dp"
+                            android:padding="0dp"
+                            app:iconGravity="textStart"
+                            app:iconTint="#FDFEFE"
+                            app:iconSize="40dp"
+                            app:layout_column="0"
+                            app:layout_row="0" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/push"
+                            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginEnd="20dp"
+                            android:scaleType="centerInside"
+                            android:theme="@style/Theme.MaterialComponents.Light"
+                            app:backgroundTint="#258EA6"
+                            app:cornerRadius="100dp"
+                            app:icon="@drawable/push"
+                            app:iconPadding="0dp"
+                            android:padding="0dp"
+                            app:iconGravity="textStart"
+                            app:iconTint="#FDFEFE"
+                            app:iconSize="40dp"/>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/sit"
+                            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginEnd="20dp"
+                            android:scaleType="centerInside"
+                            android:theme="@style/Theme.MaterialComponents.Light"
+                            app:backgroundTint="#258EA6"
+                            app:cornerRadius="100dp"
+                            app:icon="@drawable/sit"
+                            app:iconPadding="0dp"
+                            android:padding="0dp"
+                            app:iconGravity="textStart"
+                            app:iconTint="#FDFEFE"
+                            app:iconSize="40dp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/board"
+                            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginEnd="20dp"
+                            android:scaleType="centerInside"
+                            android:theme="@style/Theme.MaterialComponents.Light"
+                            app:backgroundTint="#258EA6"
+                            app:cornerRadius="100dp"
+                            app:icon="@drawable/board"
+                            app:iconPadding="0dp"
+                            android:padding="0dp"
+                            app:iconGravity="textStart"
+                            app:iconTint="#FDFEFE"
+                            app:iconSize="45dp" />
+
+                    </androidx.gridlayout.widget.GridLayout>
+                </HorizontalScrollView>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fillViewport="true"
+                    android:scrollbars="none">
+
+                    <androidx.gridlayout.widget.GridLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginEnd="-0dp"
+                        android:gravity="center">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/kicks"
+                            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerInside"
+                            android:theme="@style/Theme.MaterialComponents.Light"
+                            app:backgroundTint="#258EA6"
+                            app:cornerRadius="100dp"
+                            app:icon="@drawable/kicks"
+                            app:iconPadding="0dp"
+                            android:padding="0dp"
+                            app:iconGravity="textStart"
+                            app:iconTint="#FDFEFE"
+                            app:iconSize="40dp"
+                            app:layout_column="0"
+                            app:layout_row="0" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/heel"
+                            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginEnd="20dp"
+                            android:scaleType="centerInside"
+                            android:theme="@style/Theme.MaterialComponents.Light"
+                            app:backgroundTint="#258EA6"
+                            app:cornerRadius="100dp"
+                            app:icon="@drawable/heel"
+                            app:iconPadding="0dp"
+                            android:padding="0dp"
+                            app:iconGravity="textStart"
+                            app:iconTint="#FDFEFE"
+                            app:iconSize="40dp"/>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/dips"
+                            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginEnd="20dp"
+                            android:scaleType="centerInside"
+                            android:theme="@style/Theme.MaterialComponents.Light"
+                            app:backgroundTint="#258EA6"
+                            app:cornerRadius="100dp"
+                            app:icon="@drawable/dips"
+                            app:iconPadding="0dp"
+                            android:padding="0dp"
+                            app:iconGravity="textStart"
+                            app:iconTint="#FDFEFE"
+                            app:iconSize="40dp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/climb"
+                            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginEnd="20dp"
+                            android:scaleType="centerInside"
+                            android:theme="@style/Theme.MaterialComponents.Light"
+                            app:backgroundTint="#258EA6"
+                            app:cornerRadius="100dp"
+                            app:icon="@drawable/climb"
+                            app:iconPadding="0dp"
+                            android:padding="0dp"
+                            app:iconGravity="textStart"
+                            app:iconTint="#FDFEFE"
+                            app:iconSize="45dp" />
+
                     </androidx.gridlayout.widget.GridLayout>
                 </HorizontalScrollView>
 

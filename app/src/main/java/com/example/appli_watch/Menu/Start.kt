@@ -35,12 +35,12 @@ class Start : AppCompatActivity() {
 
         exercise = findViewById(R.id.trainingTitle)
         start = findViewById(R.id.start)
+
         if(maxRepetitions==0){
             exercise.text = timeselect.toString().plus("s   ").plus(exercise_name)
         }
         else{
-            exercise.text = exo.get(0)
-//            exercise.text = maxRepetitions.toString().plus("  ").plus(exercise_name)
+            exercise.text = maxRepetitions.toString().plus("  ").plus(exercise_name)
         }
 
         time = findViewById(R.id.HH)
@@ -112,6 +112,55 @@ class Start : AppCompatActivity() {
                     Intent_birddogs.putExtra("Time_ini", time_ini)
                     Intent_birddogs.putExtra("Exo",exo)
 
+                    val Intent_push : Intent =  Intent(/* packageContext = */ t,/* cls = */
+                        TimeTrackedActivity::class.java)
+                    Intent_push.putExtra("Timeselection", timeselect)
+                    Intent_push.putExtra("ExercisesName", exercise_name)
+                    Intent_push.putExtra("Time_ini", time_ini)
+                    Intent_push.putExtra("Exo",exo)
+
+                    val Intent_sit : Intent =  Intent(/* packageContext = */ t,/* cls = */
+                        BirdDogs::class.java)
+                    Intent_sit.putExtra("maxRepetitions", maxRepetitions)
+                    Intent_sit.putExtra("ExercisesName", exercise_name)
+                    Intent_sit.putExtra("Time_ini", time_ini)
+                    Intent_sit.putExtra("Exo",exo)
+
+                    val Intent_board : Intent =  Intent(/* packageContext = */ t,/* cls = */
+                        TimeTrackedActivity::class.java)
+                    Intent_board.putExtra("Timeselection", timeselect)
+                    Intent_board.putExtra("ExercisesName", exercise_name)
+                    Intent_board.putExtra("Time_ini", time_ini)
+                    Intent_board.putExtra("Exo",exo)
+
+                    val Intent_kicks : Intent =  Intent(/* packageContext = */ t,/* cls = */
+                        TimeTrackedActivity::class.java)
+                    Intent_kicks.putExtra("Timeselection", timeselect)
+                    Intent_kicks.putExtra("ExercisesName", exercise_name)
+                    Intent_kicks.putExtra("Time_ini", time_ini)
+                    Intent_kicks.putExtra("Exo",exo)
+
+                    val Intent_heel : Intent =  Intent(/* packageContext = */ t,/* cls = */
+                        TimeTrackedActivity::class.java)
+                    Intent_heel.putExtra("Timeselection", timeselect)
+                    Intent_heel.putExtra("ExercisesName", exercise_name)
+                    Intent_heel.putExtra("Time_ini", time_ini)
+                    Intent_heel.putExtra("Exo",exo)
+
+                    val Intent_dips : Intent =  Intent(/* packageContext = */ t,/* cls = */
+                        TimeTrackedActivity::class.java)
+                    Intent_dips.putExtra("Timeselection", timeselect)
+                    Intent_dips.putExtra("ExercisesName", exercise_name)
+                    Intent_dips.putExtra("Time_ini", time_ini)
+                    Intent_dips.putExtra("Exo",exo)
+
+                    val Intent_climb : Intent =  Intent(/* packageContext = */ t,/* cls = */
+                        TimeTrackedActivity::class.java)
+                    Intent_climb.putExtra("Timeselection", timeselect)
+                    Intent_climb.putExtra("ExercisesName", exercise_name)
+                    Intent_climb.putExtra("Time_ini", time_ini)
+                    Intent_climb.putExtra("Exo",exo)
+
 
                     if(exercise_name == "Squats"){
                         startActivity(Intent_squats)
@@ -127,6 +176,27 @@ class Start : AppCompatActivity() {
                     }
                     if(exercise_name == "Bird Dogs"){
                         startActivity(Intent_birddogs)
+                    }
+                    if(exercise_name == "Push Ups"){
+                        startActivity(Intent_push)
+                    }
+                    if(exercise_name == "Sit Ups"){
+                        startActivity(Intent_sit)
+                    }
+                    if(exercise_name == "Board"){
+                        startActivity(Intent_board)
+                    }
+                    if(exercise_name == "High Knees"){
+                        startActivity(Intent_kicks)
+                    }
+                    if(exercise_name == "Butt Kicks"){
+                        startActivity(Intent_heel)
+                    }
+                    if(exercise_name == "Dips"){
+                        startActivity(Intent_dips)
+                    }
+                    if(exercise_name == "Climbers"){
+                        startActivity(Intent_climb)
                     }
 
                 }catch (e: Exception){

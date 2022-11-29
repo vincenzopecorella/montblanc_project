@@ -13,6 +13,7 @@ import java.time.LocalDateTime
 import java.util.*
 
 class RepSelector : AppCompatActivity() {
+    private var exo = arrayListOf<String>("2","End","0")
     private lateinit var exercise_name: String
     private var maxRepetitions: Int = 0
     private lateinit var exercise: TextView
@@ -76,6 +77,7 @@ class RepSelector : AppCompatActivity() {
                     Start::class.java)
             Intent_start.putExtra("maxRepetitions", maxRepetitions)
             Intent_start.putExtra("ExercisesName", exercise_name)
+            Intent_start.putExtra("Exo",exo)
             startActivity(Intent_start)
 
         }
