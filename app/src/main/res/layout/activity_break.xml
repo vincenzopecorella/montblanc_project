@@ -17,16 +17,6 @@
             android:layout_width="match_parent"
             android:layout_height="10dp" />
 
-        <TextView
-            android:id="@+id/timepast"
-            android:layout_width="match_parent"
-            android:layout_height="18dp"
-            android:gravity="center"
-            android:text="VOID"
-            android:textColor="#FDFEFE"
-            android:textSize="12dp"
-            android:fontFamily="sans-serif-thin"/>
-
 
         <TextView
             android:id="@+id/exercisesName"
@@ -40,11 +30,11 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="3dp" />
+            android:layout_height="0dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="18dp"
+        android:layout_height="15dp"
         android:gravity="left"
         android:orientation="horizontal">
 
@@ -52,7 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:maxLines="10"
-            android:layout_marginLeft="50dp"
+            android:layout_marginLeft="35dp"
             android:textColor="#FDFEFE"
             android:text="Next :"
             android:fontFamily="sans-serif-light"
@@ -82,7 +72,7 @@
             android:id="@+id/timeLeft"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:text="20"
+            android:text=" "
             android:layout_gravity="center"
             android:gravity="center"
             android:textColor="#FDFEFE"
@@ -94,7 +84,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="10dp" />
+            android:layout_height="0dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -106,8 +96,8 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/past"
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="top"
                 android:padding="0dp"
                 android:theme="@style/Theme.MaterialComponents.Light"
@@ -120,7 +110,7 @@
                 app:iconTint="#FDFEFE" />
 
             <Space
-                android:layout_width="3dp"
+                android:layout_width="5dp"
                 android:layout_height="wrap_content" />
 
             <RelativeLayout
@@ -131,11 +121,10 @@
                     android:id="@+id/stop"
                     android:visibility="visible"
                     style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
-                    android:layout_width="30dp"
+                    android:layout_width="45dp"
                     android:layout_height="30dp"
                     android:clickable="true"
                     android:layout_marginTop="11dp"
-                    android:layout_marginBottom="5dp"
                     android:backgroundTint="#A93226"
                     android:padding="0dp"
                     android:theme="@style/Theme.MaterialComponents.Light"
@@ -150,11 +139,10 @@
                     android:id="@+id/play"
                     android:visibility="invisible"
                     style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
-                    android:layout_width="30dp"
+                    android:layout_width="45dp"
                     android:layout_height="30dp"
                     android:clickable="false"
                     android:layout_marginTop="11dp"
-                    android:layout_marginBottom="5dp"
                     android:backgroundTint="#A93226"
                     android:padding="0dp"
                     android:theme="@style/Theme.MaterialComponents.Light"
@@ -168,14 +156,14 @@
             </RelativeLayout>
 
             <Space
-                android:layout_width="3dp"
+                android:layout_width="5dp"
                 android:layout_height="wrap_content" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/cancel"
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="top"
                 android:padding="0dp"
                 android:theme="@style/Theme.MaterialComponents.Light"
@@ -190,6 +178,9 @@
 
         </LinearLayout>
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="3dp" />
 
         <TextView
             android:id="@+id/HH"

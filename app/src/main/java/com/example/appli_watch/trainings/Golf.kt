@@ -3,6 +3,7 @@ package com.example.appli_watch.trainings
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.TextView
 import com.example.appli_watch.Menu.Menu_training
@@ -13,7 +14,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class Golf : AppCompatActivity() {
-    private var exo = arrayListOf<String>("6","Push Ups","14","Rest","10","Climbers","20","Rest","13","Dips","7","Rest","3","Board","18","End","0")
+    private var exo = arrayListOf<String>("6","Push Ups","14","Rest","10","Jumping Jacks","20","Rest","13","Dips","7","Rest","3","Board","18","End","0")
     private lateinit var workout: TextView
     private lateinit var exercises: TextView
     private lateinit var start: Button
@@ -24,6 +25,7 @@ class Golf : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_overview)
+        window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
 
         exercises = findViewById(R.id.exercises)
         workout = findViewById(R.id.workout)
@@ -34,21 +36,9 @@ class Golf : AppCompatActivity() {
 
         time = findViewById(R.id.HH)
 
-        val thread: Thread = object : Thread() {
-            override fun run() {
-                try {
-                    while (true) {
-                        val sdf = SimpleDateFormat("HH:mm", Locale.getDefault())
-                        val currentTime = sdf.format(Date())
-                        time.text = currentTime
-                    }
-                } catch (e: InterruptedException) {
-                    e.printStackTrace()
-                }
-            }
-        }
-
-        thread.start();
+        val sdf = SimpleDateFormat("HH:mm", Locale.getDefault())
+        val currentTime = sdf.format(Date())
+        time.text = currentTime
 
         if(exo.get(0).toInt()>=2){
             maxRepetitions = exo.get(2).toInt()
@@ -62,6 +52,7 @@ class Golf : AppCompatActivity() {
             val Intent_menu : Intent =  Intent(/* packageContext = */ this,/* cls = */
                 Menu_training::class.java)
             startActivity(Intent_menu)
+            finish()
         }
 
         start.setOnClickListener {
@@ -71,6 +62,7 @@ class Golf : AppCompatActivity() {
             Intent_start.putExtra("ExercisesName", exercise_name)
             Intent_start.putExtra("Exo",exo)
             startActivity(Intent_start)
+            finish()
         }
 
     }

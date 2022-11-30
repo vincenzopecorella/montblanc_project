@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.TextView
 import com.example.appli_watch.MainActivity
@@ -21,7 +22,7 @@ class End : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_end)
-
+        window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
 
         val intent = intent
         time_ini = intent.getIntExtra("Time_ini",0)
@@ -72,26 +73,15 @@ class End : AppCompatActivity() {
 
         time = findViewById(R.id.HH)
 
-        val thread: Thread = object : Thread() {
-            override fun run() {
-                try {
-                    while (true) {
-                        val sdf = SimpleDateFormat("HH:mm", Locale.getDefault())
-                        val currentTime = sdf.format(Date())
-                        time.text = currentTime
-                    }
-                } catch (e: InterruptedException) {
-                    e.printStackTrace()
-                }
-            }
-        }
-
-        thread.start();
+        val sdf = SimpleDateFormat("HH:mm", Locale.getDefault())
+        val currentTime = sdf.format(Date())
+        time.text = currentTime
 
         menu.setOnClickListener {
             val Intent_menu : Intent =  Intent(/* packageContext = */ this,/* cls = */
                 MainActivity::class.java)
             startActivity(Intent_menu)
+            finish()
         }
 
     }

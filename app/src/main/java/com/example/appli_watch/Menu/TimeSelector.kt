@@ -3,6 +3,7 @@ package com.example.appli_watch.Menu
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.TextView
 import com.example.appli_watch.R
@@ -24,6 +25,7 @@ class TimeSelector : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_time_selector)
+        window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
 
         val intent = intent
         exercise_name = intent.getStringExtra("ExercisesName").toString()
@@ -36,23 +38,9 @@ class TimeSelector : AppCompatActivity() {
 
         time = findViewById(R.id.HH)
 
-        val thread: Thread = object : Thread() {
-            override fun run() {
-                try {
-                    while (true) {
-                        val sdf = SimpleDateFormat("HH:mm", Locale.getDefault())
-                        val currentTime = sdf.format(Date())
-                        time.text = currentTime
-                    }
-                } catch (e: InterruptedException) {
-                    e.printStackTrace()
-                }
-            }
-        }
-
-        thread.start();
-
-
+        val sdf = SimpleDateFormat("HH:mm", Locale.getDefault())
+        val currentTime = sdf.format(Date())
+        time.text = currentTime
 
         add.setOnClickListener {
             maxRepetitions+=5
@@ -77,6 +65,7 @@ class TimeSelector : AppCompatActivity() {
             Intent_start.putExtra("ExercisesName", exercise_name)
             Intent_start.putExtra("Exo",exo)
             startActivity(Intent_start)
+            finish()
 
         }
     }

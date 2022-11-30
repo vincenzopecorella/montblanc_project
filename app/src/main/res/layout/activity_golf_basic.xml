@@ -44,6 +44,14 @@
             android:textSize="14sp" />
 
         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="10"
+            android:text="C'est parti !!"
+            android:textAlignment="center"
+            android:textSize="20dp" />
+
+        <TextView
             android:id="@+id/metric"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

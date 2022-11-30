@@ -3,8 +3,10 @@ package com.example.appli_watch.Menu
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.TextView
+import com.example.appli_watch.MainActivity
 import com.example.appli_watch.R
 import java.text.SimpleDateFormat
 import java.util.*
@@ -18,6 +20,7 @@ class Menu_you : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu_you)
+        window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
 
         button_reco = findViewById(R.id.reco)
         button_historic = findViewById(R.id.historic)
@@ -26,41 +29,33 @@ class Menu_you : AppCompatActivity() {
 
         time = findViewById(R.id.HH)
 
-        val thread: Thread = object : Thread() {
-            override fun run() {
-                try {
-                    while (true) {
-                        val sdf = SimpleDateFormat("HH:mm", Locale.getDefault())
-                        val currentTime = sdf.format(Date())
-                        time.text = currentTime
-                    }
-                } catch (e: InterruptedException) {
-                    e.printStackTrace()
-                }
-            }
-        }
-
-        thread.start();
+        val sdf = SimpleDateFormat("HH:mm", Locale.getDefault())
+        val currentTime = sdf.format(Date())
+        time.text = currentTime
 
         val Intent_reco : Intent =  Intent(/* packageContext = */ this,/* cls = */
-            Menu_training::class.java)
+            MainActivity::class.java)
         button_reco.setOnClickListener {
             startActivity(Intent_reco)
+            finish()
         }
         val Intent_historic : Intent =  Intent(/* packageContext = */ this,/* cls = */
-            Main_menu_old::class.java)
+            MainActivity::class.java)
         button_historic.setOnClickListener {
             startActivity(Intent_historic)
+            finish()
         }
         val Intent_analyses : Intent =  Intent(/* packageContext = */ this,/* cls = */
-            Main_menu_old::class.java)
+            MainActivity::class.java)
         button_analyses.setOnClickListener {
             startActivity(Intent_analyses)
+            finish()
         }
         val Intent_data : Intent =  Intent(/* packageContext = */ this,/* cls = */
-            Menu_training::class.java)
+            MainActivity::class.java)
         button_data.setOnClickListener {
             startActivity(Intent_data)
+            finish()
         }
 
 

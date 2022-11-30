@@ -45,7 +45,7 @@ class Menu_exercises : AppCompatActivity() {
             }
         }
 
-        thread.start();
+//        thread.start();
 
         val Intent_jumpingjacks : Intent =  Intent(/* packageContext = */ this,/* cls = */
             RepSelector::class.java)

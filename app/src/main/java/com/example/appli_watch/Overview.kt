@@ -30,21 +30,9 @@ class Overview : AppCompatActivity() {
 
         time = findViewById(R.id.HH)
 
-        val thread: Thread = object : Thread() {
-            override fun run() {
-                try {
-                    while (true) {
-                        val sdf = SimpleDateFormat("HH:mm", Locale.getDefault())
-                        val currentTime = sdf.format(Date())
-                        time.text = currentTime
-                    }
-                } catch (e: InterruptedException) {
-                    e.printStackTrace()
-                }
-            }
-        }
-
-        thread.start();
+        val sdf = SimpleDateFormat("HH:mm", Locale.getDefault())
+        val currentTime = sdf.format(Date())
+        time.text = currentTime
 
         start.setOnClickListener {
             val Intent_start : Intent =  Intent(/* packageContext = */ this,/* cls = */

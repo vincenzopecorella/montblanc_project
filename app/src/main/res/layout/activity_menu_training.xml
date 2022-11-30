@@ -22,14 +22,14 @@
             android:layout_height="wrap_content"
             android:text="Training"
             android:gravity="center"
-            android:textSize="22dp"
+            android:textSize="18dp"
             android:fontFamily="sans-serif-medium"
             android:textColor="#21618C"/>
 
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="130dp"
             android:verticalScrollbarPosition="right">
 
             <LinearLayout
@@ -47,7 +47,7 @@
                     android:text="Warm - ups"
                     android:layout_marginLeft="30dp"
                     android:gravity="center_vertical"
-                    android:textSize="16dp"
+                    android:textSize="14dp"
                     android:fontFamily="sans-serif-light"
                     android:textColor="#FDFEFE  "/>
 
@@ -138,7 +138,7 @@
                     android:text="Workouts"
                     android:layout_marginLeft="30dp"
                     android:gravity="center_vertical"
-                    android:textSize="16dp"
+                    android:textSize="14dp"
                     android:fontFamily="sans-serif-light"
                     android:textColor="#FDFEFE  "/>
 
@@ -228,7 +228,7 @@
                     android:text="Exercises"
                     android:layout_marginLeft="30dp"
                     android:gravity="center_vertical"
-                    android:textSize="16dp"
+                    android:textSize="14dp"
                     android:fontFamily="sans-serif-light"
                     android:textColor="#FDFEFE  "/>
 
@@ -527,7 +527,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="3dp" />
+            android:layout_height="0dp" />
 
         <TextView
             android:id="@+id/HH"
@@ -536,7 +536,7 @@
             android:text="VOID"
             android:gravity="center"
             android:fontFamily="sans-serif-thin"
-            android:textSize="15dp"
+            android:textSize="12dp"
             android:textColor="#FDFEFE"/>
 
     </LinearLayout>

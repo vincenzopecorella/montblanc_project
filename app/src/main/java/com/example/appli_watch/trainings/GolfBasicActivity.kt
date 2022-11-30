@@ -41,6 +41,7 @@ class GolfBasicActivity : AppCompatActivity() {
         }
 
 
+        resultLauncher.launch(nextIntent)
         startButton.setOnClickListener {
             resultLauncher.launch(nextIntent)
         }
@@ -50,27 +51,34 @@ class GolfBasicActivity : AppCompatActivity() {
         when(exercisesCount){
             0 -> {
                 nextExerciseName.text = "Jumping Jacks"
-                nextExerciseMetric.text = "10 repetitions"
+                nextExerciseMetric.text = "3 repetitions"
                 nextIntent =  Intent(this,JumpingJacks::class.java)
-                nextIntent.putExtra("maxRepetitions", 10)
+                nextIntent.putExtra("maxRepetitions", 3)
+                nextIntent.putExtra("ExercisesName", "Jumping Jacks")
             }
             1 -> {
-                nextExerciseName.text = "Rest"
-                nextExerciseMetric.text = "5 seconds"
-                nextIntent = Intent(this,BreakActivity::class.java)
-                nextIntent.putExtra("time", 5)
+                nextExerciseName.text = "Jumping Jacks"
+                nextExerciseMetric.text = "4 repetitions"
+                nextIntent =  Intent(this,JumpingJacks::class.java)
+                nextIntent.putExtra("maxRepetitions", 4)
+                nextIntent.putExtra("ExercisesName", "Jumping Jacks")
+                startButton.performClick()
             }
             2 -> {
-                nextExerciseName.text = "Squats"
-                nextExerciseMetric.text = "10 repetitions"
-                nextIntent =  Intent(this,Squats::class.java)
-                nextIntent.putExtra("maxRepetitions", 20)
+                nextExerciseName.text = "Jumping Jacks"
+                nextExerciseMetric.text = "5 repetitions"
+                nextIntent =  Intent(this,JumpingJacks::class.java)
+                nextIntent.putExtra("maxRepetitions", 5)
+                nextIntent.putExtra("ExercisesName", "Jumping Jacks")
+                startButton.performClick()
             }
             3 -> {
-                nextExerciseName.text = "Rest"
-                nextExerciseMetric.text = "10 seconds"
-                nextIntent = Intent(this,BreakActivity::class.java)
-                nextIntent.putExtra("time", 10)
+                nextExerciseName.text = "Jumping Jacks"
+                nextExerciseMetric.text = "6 repetitions"
+                nextIntent =  Intent(this,JumpingJacks::class.java)
+                nextIntent.putExtra("maxRepetitions", 6)
+                nextIntent.putExtra("ExercisesName", "Jumping Jacks")
+                startButton.performClick()
             }
             4 -> {
                 //to something
