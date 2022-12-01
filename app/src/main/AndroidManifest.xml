@@ -108,6 +108,14 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".exercises.Situps"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".exercises.JumpingJacks"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.NoActionBar">
