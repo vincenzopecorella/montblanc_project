@@ -17,7 +17,7 @@ class ExercisesConstantsRepo(private val exercise: Exercise) {
     val TRESHOLD_CORREl_SQUAT = 150000
         //40000.0
 
-    val PEAK_WIDTH1 = 80
+    val PEAK_WIDTH1 = 50 //80
 
     val G_CONST = 9.81
 
