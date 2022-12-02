@@ -102,7 +102,7 @@ class ExercisesConstantsRepo(private val exercise: Exercise) {
     val GREATEST_SAMPLE_SIZE_L = intDataSample_L.size
 
     val inBetweenLungesWaitTime = 100 //TODO
-    val TRESHOLD_CORREl_L = 30000.0 //TODO
+    val TRESHOLD_CORREl_L = 30000.0
 
     val PEAK_WIDTH_L = 366-337
 
@@ -128,7 +128,7 @@ class ExercisesConstantsRepo(private val exercise: Exercise) {
     val indexCorrAll_ST = arrayOf(0,0,0,0,0,0)
 
 
-    val sampleIntegAll_ST: Array<Array<Double>> = arrayOf(intDataSample_L)
+    val sampleIntegAll_ST: Array<Array<Double>> = arrayOf(intDataSample_ST)
 
     val RangeDim_ST = arrayOf(PEAK_WIDTH_L,0,0,0,0,0)
     val dimension_ST = 1
