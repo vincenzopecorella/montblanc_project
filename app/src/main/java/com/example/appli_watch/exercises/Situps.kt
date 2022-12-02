@@ -32,7 +32,6 @@ class Situps() : Activity(), SensorEventListener, View.OnClickListener {
     private lateinit var counter: TextView
     private lateinit var exercise: TextView
     private var pause: Boolean = false
-    private var maxCorr: Double = 0.0
     private var Next_exercise: Next = Next()
     private val repetitionTracker: RepetitionDetector = RepetitionDetector(Exercise.SITUPS)
     private var maxRepetitions: Int = 0
@@ -134,10 +133,8 @@ class Situps() : Activity(), SensorEventListener, View.OnClickListener {
             return
         }
         repetitionTracker.update(event)
-        if(repetitionTracker.corr > maxCorr){
-            maxCorr = repetitionTracker.corr
-        }
-        counter.text = "${repetitionTracker.getNumberOfRepetitions()}"
+
+        counter.text = "${repetitionTracker.getNumberOfRepetitions()}" + " " + "${repetitionTracker.maxCorrPerRep} "
         if(repetitionTracker.getNumberOfRepetitions() >= maxRepetitions ){
             sensorManager.unregisterListener(this)
             sensorManager2.unregisterListener(this)
