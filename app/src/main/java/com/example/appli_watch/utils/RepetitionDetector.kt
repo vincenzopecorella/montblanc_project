@@ -14,6 +14,7 @@ class RepetitionDetector(private val exercise: Exercise) {
     //to be changed later on
     var dataAccAll = Array(6) { mutableListOf(0.0) }
     var integralDataAll = Array(6) { mutableListOf(0.0) }
+    var maxCorrPerRep: Double = 0.0
 
     var pointsSkipped: Int = 0
 
@@ -139,9 +140,13 @@ class RepetitionDetector(private val exercise: Exercise) {
 
                 //dataAll: Array<MutableList<Double>>, sample: Array<Array<Double>>, indexList: Array<Int>, dimension: Int
                 corr = corr_mix(integralDataAll,sampleIntegAll, indexCorrAll,dimension)
+                if(corr > maxCorrPerRep){
+                    maxCorrPerRep = corr
+                }
 
                 if ((!waiting) && (corr_mix(integralDataAll,sampleIntegAll, indexCorrAll,dimension) > TRESHOLD_CORREl)) { //correlation performed + result compared to treshold value
                     //if threshold is exceeded, squat number is incremented and detection is deactivated for inBetweenSquatsWaitTime
+                    maxCorrPerRep = 0.0
                     numberOfRepetitions += 1
                     waiting = true
                     waitCountdown = COUNTDOWN
