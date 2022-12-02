@@ -51,7 +51,7 @@ class Next() {
             intent_next.putExtra("Time_ini", time_ini)
         }
         else if(Nextexercise=="Sit Ups"){
-            intent_next = Intent(context, BirdDogs::class.java)
+            intent_next = Intent(context, Situps::class.java)
             intent_next.putExtra("maxRepetitions", NextRep)
             intent_next.putExtra("ExercisesName", Nextexercise)
             intent_next.putExtra("Time_ini", time_ini)
