@@ -7,8 +7,7 @@ import android.view.WindowManager
 import android.widget.Button
 import android.widget.TextView
 import com.example.appli_watch.R
-import com.example.appli_watch.trainings.Golf
-import com.example.appli_watch.trainings.GolfBasicActivity
+import com.example.appli_watch.trainings.*
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -70,31 +69,31 @@ class Menu_training : AppCompatActivity() {
             finish()
         }
         val Intent_horse : Intent =  Intent(/* packageContext = */ this,/* cls = */
-            Main_menu_old::class.java)
+            Horse::class.java)
         button_horse.setOnClickListener {
             startActivity(Intent_horse)
             finish()
         }
         val Intent_squash : Intent =  Intent(/* packageContext = */ this,/* cls = */
-            Main_menu_old::class.java)
+            Squash::class.java)
         button_squash.setOnClickListener {
             startActivity(Intent_squash)
             finish()
         }
         val Intent_beginner : Intent =  Intent(/* packageContext = */ this,/* cls = */
-            Menu_training::class.java)
+            Easy::class.java)
         button_beginner.setOnClickListener {
             startActivity(Intent_beginner)
             finish()
         }
         val Intent_intermediary : Intent =  Intent(/* packageContext = */ this,/* cls = */
-            Main_menu_old::class.java)
+            Intermediary::class.java)
         button_intermediary.setOnClickListener {
             startActivity(Intent_intermediary)
             finish()
         }
         val Intent_advanced : Intent =  Intent(/* packageContext = */ this,/* cls = */
-            Main_menu_old::class.java)
+            Intense::class.java)
         button_advanced.setOnClickListener {
             startActivity(Intent_advanced)
             finish()

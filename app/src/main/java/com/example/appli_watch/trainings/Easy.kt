@@ -9,12 +9,11 @@ import android.widget.TextView
 import com.example.appli_watch.Menu.Menu_training
 import com.example.appli_watch.Menu.Start
 import com.example.appli_watch.R
-import com.example.appli_watch.exercises.JumpingJacks
 import java.text.SimpleDateFormat
 import java.util.*
 
-class Golf : AppCompatActivity() {
-    private var exo = arrayListOf<String>("28","Butt Kicks","30","Rest","10","Jumping Jacks","25","Rest","15","Jumping Jacks","25","Rest","15","Arm Circles","30","Rest","10","Arm Circles","30","Rest","15","Squats","15","Rest","20","Push Ups","30","End","0")
+class Easy : AppCompatActivity() {
+    private var exo = arrayListOf<String>("44","Jumping Jacks","20","Rest","20","Push Ups","20","Rest","30","Push Ups","20","Rest","30","Squats","15","Rest","20","Squats","10","Rest","20","Sit Ups","10","Rest","30","Sit Ups","5","Rest","20","Lunges","5","Rest","20","Lunges","5","Rest","20","Dead Bugs","5","Rest","30","Board","30","End","0")
     private lateinit var workout: TextView
     private lateinit var exercises: TextView
     private lateinit var start: Button
@@ -31,8 +30,8 @@ class Golf : AppCompatActivity() {
         workout = findViewById(R.id.workout)
         start = findViewById(R.id.start)
 
-        exercises.text = "Butt Kicks       30s\nJumping Jacks     50\nArm Circles      60s\nSquats            15\nPush Ups         20s"
-        workout.text = "Golf"
+        exercises.text = "Jumping Jacks   20\nPush Ups         20s\nSquats        25\nSit Ups           15\nLunges            10\nDead Bugs          5\nBoard            30s"
+        workout.text = "Beginner"
 
         time = findViewById(R.id.HH)
 

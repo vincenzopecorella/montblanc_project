@@ -146,12 +146,12 @@ class RepetitionDetector(private val exercise: Exercise) {
 
                 if ((!waiting) && (corr_mix(integralDataAll,sampleIntegAll, indexCorrAll,dimension) > TRESHOLD_CORREl)) { //correlation performed + result compared to treshold value
                     //if threshold is exceeded, squat number is incremented and detection is deactivated for inBetweenSquatsWaitTime
-                    //maxCorrPerRep = 0.0
                     numberOfRepetitions += 1
                     waiting = true
                     waitCountdown = COUNTDOWN
                 }
                 if (waiting) {
+                    maxCorrPerRep = 0.0
                     waitCountdown -= 1
                     if (waitCountdown <= 0) waiting = false
                 }

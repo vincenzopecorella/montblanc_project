@@ -9,12 +9,11 @@ import android.widget.TextView
 import com.example.appli_watch.Menu.Menu_training
 import com.example.appli_watch.Menu.Start
 import com.example.appli_watch.R
-import com.example.appli_watch.exercises.JumpingJacks
 import java.text.SimpleDateFormat
 import java.util.*
 
-class Golf : AppCompatActivity() {
-    private var exo = arrayListOf<String>("28","Butt Kicks","30","Rest","10","Jumping Jacks","25","Rest","15","Jumping Jacks","25","Rest","15","Arm Circles","30","Rest","10","Arm Circles","30","Rest","15","Squats","15","Rest","20","Push Ups","30","End","0")
+class Intense : AppCompatActivity() {
+    private var exo = arrayListOf<String>("110","Jumping Jacks","30","Rest","10","Jumping Jacks","30","Rest","15","Push Ups","45","Rest","20","Push Ups","45","Rest","20","Push Ups","30","Rest","20","Climbers","30","Rest","20","Squats","25","Rest","15","Climbers","45","Rest","20","Squats","25","Rest","15","Climbers","30","Rest","20","Squats","25","Rest","30","Sit Ups","15","Rest","25","Sit Ups","25","Rest","20","Sit Ups","25","Rest","20","Sit Ups","25","Rest","35","Lunges","20","Rest","15","Lunges","20","Rest","20","Bird Dogs","15","Rest","15","Bird Dogs","15","Rest","20","Dead Bugs","15","Rest","20","Dead Bugs","15","Rest","30","Dips","30","Rest","20","Dips","30","Rest","20","Board","60","Push Ups","30","Rest","20","Lunges","10","Rest","25","Squats","25","Rest","20","Board","45","End","0")
     private lateinit var workout: TextView
     private lateinit var exercises: TextView
     private lateinit var start: Button
@@ -31,8 +30,8 @@ class Golf : AppCompatActivity() {
         workout = findViewById(R.id.workout)
         start = findViewById(R.id.start)
 
-        exercises.text = "Butt Kicks       30s\nJumping Jacks     50\nArm Circles      60s\nSquats            15\nPush Ups         20s"
-        workout.text = "Golf"
+        exercises.text = "Jumping Jacks   60\nPush Ups        150s\nClimbers        105s\nSquats       100\nSit Ups           75\nLunges            50\nBird Dogs         30\nDead Bugs          30\nDips             60s\nBoard            90s"
+        workout.text = "Advanced"
 
         time = findViewById(R.id.HH)
 
