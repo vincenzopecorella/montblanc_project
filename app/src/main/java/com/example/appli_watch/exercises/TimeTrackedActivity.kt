@@ -1,9 +1,12 @@
 package com.example.appli_watch.exercises
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.os.VibrationEffect
+import android.os.Vibrator
 import android.view.View
 import android.view.WindowManager
 import android.widget.Button
@@ -80,6 +83,8 @@ class TimeTrackedActivity : AppCompatActivity() {
             }
 
             override fun onFinish() {
+                val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+                vibrator.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE))
                 startActivity(intent_next)
                 finish()
             }

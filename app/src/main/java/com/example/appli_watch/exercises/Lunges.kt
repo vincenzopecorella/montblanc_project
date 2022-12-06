@@ -1,12 +1,15 @@
 package com.example.appli_watch.exercises
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import android.os.Bundle
+import android.os.VibrationEffect
+import android.os.Vibrator
 import android.view.View
 import android.view.WindowManager
 import android.widget.Button
@@ -134,8 +137,10 @@ class Lunges() : Activity(), SensorEventListener, View.OnClickListener {
         }
         repetitionTracker.update(event)
 
-        counter.text = "${repetitionTracker.getNumberOfRepetitions()}" + " " + "${repetitionTracker.maxCorrPerRep} "
+        counter.text = "${repetitionTracker.getNumberOfRepetitions()}"
         if(repetitionTracker.getNumberOfRepetitions() >= maxRepetitions ){
+            val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+            vibrator.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE))
             sensorManager.unregisterListener(this)
             sensorManager2.unregisterListener(this)
             startActivity(intent_next)

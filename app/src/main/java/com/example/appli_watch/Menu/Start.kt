@@ -1,8 +1,11 @@
 package com.example.appli_watch.Menu
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.os.VibrationEffect
+import android.os.Vibrator
 import android.view.WindowManager
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -67,6 +70,9 @@ class Start : AppCompatActivity() {
             override fun onFinish() {
                 try{
                     start.text = "Go"
+                    val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+                    vibrator.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE))
+
                     val cal = Calendar.getInstance();
                     val heure_ini = cal.get(Calendar.HOUR)
                     val min_ini = cal.get(Calendar.MINUTE)
