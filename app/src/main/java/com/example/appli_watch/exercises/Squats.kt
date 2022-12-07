@@ -113,6 +113,7 @@ class Squats() : Activity(), SensorEventListener, View.OnClickListener {
             val intent_cancel = Intent(/* packageContext = */ this,/* cls = */
                 MainActivity::class.java)
             startActivity(intent_cancel)
+            finish()
         }
     }
 
