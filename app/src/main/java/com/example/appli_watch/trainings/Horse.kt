@@ -57,7 +57,7 @@ class Horse : AppCompatActivity() {
         start.setOnClickListener {
             val Intent_start : Intent =  Intent(/* packageContext = */ this,/* cls = */
                 Start::class.java)
-            Intent_start.putExtra("Timeselection", maxRepetitions)
+            Intent_start.putExtra("maxRepetitions", maxRepetitions)
             Intent_start.putExtra("ExercisesName", exercise_name)
             Intent_start.putExtra("Exo",exo)
             startActivity(Intent_start)
