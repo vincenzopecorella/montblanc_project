@@ -136,7 +136,7 @@ class BirdDogs() : Activity(), SensorEventListener, View.OnClickListener {
             return
         }
         repetitionTracker.update(event)
-        counter.text = "${repetitionTracker.getNumberOfRepetitions()}"+" "+"${repetitionTracker.maxCorrPerRep}"
+        counter.text = "${repetitionTracker.getNumberOfRepetitions()}"
         if(repetitionTracker.getNumberOfRepetitions() >= maxRepetitions ){
             val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
             vibrator.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE))
