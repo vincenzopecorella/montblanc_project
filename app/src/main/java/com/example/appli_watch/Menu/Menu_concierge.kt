@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.TextView
+import com.example.appli_watch.Find_gym
 import com.example.appli_watch.MainActivity
 import com.example.appli_watch.R
 import java.text.SimpleDateFormat
@@ -41,7 +42,7 @@ class Menu_concierge : AppCompatActivity() {
             finish()
         }
         val Intent_gym : Intent =  Intent(/* packageContext = */ this,/* cls = */
-            MainActivity::class.java)
+            Find_gym::class.java)
         button_gym.setOnClickListener {
             startActivity(Intent_gym)
             finish()

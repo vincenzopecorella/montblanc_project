@@ -92,7 +92,7 @@ class RepetitionDetector(private val exercise: Exercise) {
         val gravityModule = sqrt(currentGravity[0].pow(2)+currentGravity[1].pow(2)+currentGravity[2].pow(2))
         var accVector: Float = 0.0f
         for(i in 0..2){
-            accVector += -(currentGravity[i] * currentAccelerometer[i]) / gravityModule
+            accVector += (currentGravity[i] * currentAccelerometer[i]) / gravityModule
         }
         /*
         if(maxAcc < accVector){

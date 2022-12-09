@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.wear.widget.BoxInsetLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Find_gym"
+    tools:deviceIds="wear"
+    android:background="#000000">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+
+
+        <TextView
+            android:id="@+id/exercisesName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Find a Gym"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="#A93226"
+            android:textAlignment="center"
+            android:textSize="18dp"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="10"
+            android:layout_gravity="center"
+            android:textColor="#FDFEFE"
+            android:text="Give us a moment,\nwe are looking for a gym"
+            android:fontFamily="sans-serif-light"
+            android:textAlignment="center"
+            android:textSize="12dp"/>
+
+
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+
+
+            <androidx.gridlayout.widget.GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="-0dp"
+                android:gravity="center"
+                android:layout_gravity="center">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/cancel"
+                    android:layout_width="100dp"
+                    android:layout_height="35dp"
+                    android:adjustViewBounds="true"
+                    android:text="Cancel"
+                    android:textSize="10dp"
+                    android:fontFamily="sans-serif"
+                    android:textColor="#FDFEFE"
+                    app:layout_gravity="center_vertical"
+                    android:scaleType="centerInside"
+                    android:textAllCaps="false"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:backgroundTint="#A93226"
+                    app:cornerRadius="10dp"/>
+
+            </androidx.gridlayout.widget.GridLayout>
+
+            <Space
+                android:layout_width="5dp"
+                android:layout_height="wrap_content" />
+
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="3dp" />
+
+        <TextView
+            android:id="@+id/HH"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:gravity="center"
+            android:text="VOID"
+            android:textColor="#FDFEFE"
+            android:textSize="12dp"
+            android:fontFamily="sans-serif-thin"/>
+
+    </LinearLayout>
+</androidx.wear.widget.BoxInsetLayout>
